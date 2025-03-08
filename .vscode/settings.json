@@ -1,0 +1,45 @@
+{
+    "workbench.colorTheme": "Default Light Modern",
+    "latex-workshop.bibtex-fields.sort.enabled": true,
+    "latex-workshop.latex.outDir": "%DIR%/aux", //created files are saved to special folder
+    "latex-workshop.latex.recipe.default": "pdflatex", // Change to the recipe you want to use by default
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex, makeglossaries, pdflatex (2x)",
+            "tools": [
+                "pdflatex",
+                "makeglossaries",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "makeglossaries",
+            "command": "makeglossaries",
+            "args": [
+                "-d",
+                "%OUTDIR%", // Ensure it looks in the output directory
+                "%DOCFILE%"
+            ],
+        }
+    ]
+}

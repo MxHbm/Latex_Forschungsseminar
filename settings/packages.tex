@@ -1,0 +1,51 @@
+%################ Hilfreiche Pakete laden #######################
+
+\usepackage{settings/tudbwlimPackages}
+\usepackage{settings/tudbwlimStyle}
+\usepackage{scrhack}
+\usepackage{microtype}
+\usepackage{tikz,pgfplots}
+	\pgfplotsset{compat=newest}
+\usepackage[chapter]{algorithm} % Falls das Paket floatrow geladen wird, muss dieses Paket danach geladen werden.
+	\iflanguage{english}{\floatname{algorithm}{Algorithm}\renewcommand{\listalgorithmname}{List of Algorithms}}{\floatname{algorithm}{Algorithmus}\renewcommand{\listalgorithmname}{Algorithmenverzeichnis}} % Algorithm-Umgebung an die verwendete Sprache anpassen
+
+
+
+
+
+
+
+
+
+%################ Notwendige Pakete laden #######################
+
+\usepackage[bibencoding=auto,citestyle=authoryear-ibid,bibstyle=authoryear,natbib=true,]{biblatex}% Vergessen Sie nicht in den Optionen das Bibliographieprogramm auf "biber" umzustellen! Um die Vorlage mit BibTeX nutzen zu können, muss die Option "backend=bibtex" übergeben werden. Es ist jedoch biber zu empfehlen, beachten Sie dazu die Hinweise der biblatex-Paketdokumentation im Abschnitt 3.15 "Using the fallback BibtTeX backend".
+	\usepackage{settings/BiblatexSetup}
+\AfterPackage*{biblatex}%
+{
+	\RequirePackage[breaklinks=true, colorlinks=false, linktoc=section, linkcolor=blue, citecolor=black, hidelinks]{hyperref}
+		% Da hyperref allerhand Veränderungen an vielen Standardbefehlen vornimmt, sollte dieses als letztes in der Präambel eingebunden werden. Nur Pakete, bei denen in der Dokumentation explizit darauf hingewiesen wird, dass diese nach hyperref zu laden sind, sollten auch danach folgen.
+		\hypersetup{pdfprintscaling=None} % gleiches Verhalten, auch ohne hyperref, liefert: \pdfcatalog{/ViewerPreferences<</PrintScaling/None>>}
+	\usepackage{footnote} % https://tex.stackexchange.com/questions/207192/footcite-in-float-caption
+		\makesavenoteenv{figure}
+		\makesavenoteenv{table}
+		\makesavenoteenv{algorithm}
+}
+\AfterPackage*{hyperref}
+{
+	\RequirePackage[automake,acronym,symbols,nomain,translate=babel,]{glossaries}
+		\usepackage{settings/GlossariesSetup}
+}
+
+%############## Ideas for packages #####################´
+% Folgende auskommentierte Pakete sind als Vorschläge zu verstehen. Für Funktionsweise und Anwendungsfälle wird auf das Benutzerhandbuch "tudscr.pdf" (http://mirrors.ctan.org/macros/latex/contrib/tudscr/doc/tudscr.pdf) oder auf die entsprechende CTAN Dokumentation verwiesen.
+%\usepackage{listings} %For Visualization of programming source code 
+%\lstset{%
+%	inputencoding=utf8,extendedchars=true,
+%	literate=%
+%	{ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+%	{Ä}{{\"A}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+%	{~}{{\textasciitilde}}1 {ß}{{\ss}}1
+%	}
+
+%\usepackage{calc} % Can be used to calculate inline distances in .tex files

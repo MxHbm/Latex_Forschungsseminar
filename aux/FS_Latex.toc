@@ -1,0 +1,9 @@
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Erstes Kapitel}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Zweites Kapitel}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Erster Abschnitt des zweiten Kapitels}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Zweiter Abschnitt des zweiten Kapitels}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Dritter Abschnitt des dritten Kapitels}{5}{section.2.3}%
+\contentsline {chapter}{Bibliography}{6}{section.2.3}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

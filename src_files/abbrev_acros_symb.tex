@@ -1,0 +1,29 @@
+\makeglossaries % Glossar, Abkürzungsverzeichnis und Symbolverzeichnis erstellen
+\glsenableentrycount % aktiviert \cgls, \cglspl, \cGls, \cGlspl, siehe https://tex.stackexchange.com/questions/98494/glossaries-dont-print-single-occurences/230664#230664
+
+% Abkürzungen, die im Abkürzungsverzeichnis auftauchen und automatisch durch das glossaries-Paket sortiert werden
+\newacronym{crm}{CRM}{Customer Relationship Management}
+\newacronym{scm}{SCM}{Supply Chain Management}
+\newacronym[longplural={klein- und mittelständige Unternehmen},user1={klein- und mittelständigen Unternehmens}, description=Klein- und mittelständiges Unternehmen]{kmu}{KMU}{klein- und mittelständiges Unternehmen} % description tag setzt das Erscheinungsbild des Textes im Abkürzungsverzeichnis
+\newacronym[description=Meine Welt]{mw}{mW}{meine Welt}
+
+% Abkürzungen, die nicht im Abkürzungsverzeichnis aufgeführt werden
+\newabbreviation{zB}{z.\,B.}{zum Beispiel}
+
+% Do i need this? 
+\glsaddall[types=abbreviation]
+
+% Symbole die im Symbolverzeichniss erscheinen sollen
+% Mit "F5" kompilieren oder "Tools -> Befehle -> makeglossaries" (F9) starten, um das Symbolverzeichnis zu aktualisieren
+% \newsymb{<sort by>}{<name>}{<symbol>}{<unit>}
+%
+\newsymb{E}{Erwartungswert}{\mathbb{E}\left(\cdot\right)}{}
+\newsymb{P}{Wahrscheinlichkeitsmaß}{\mathbb{P}\left(\cdot\right)}{}
+\newsymb{V}{Varianz}{\mathbb{V}\left(\cdot\right)}{}
+\newsymb{X}{Zufallsvariable}{X}{} 
+%
+% Oder so verwenden und im Fließtext dann mit $\ExpValue$ arbeiten:
+%\newcommand{\ExpValue}{\mathbb{E}\left(\cdot\right)}
+%\newsymb{E}{Erwartungswert}{\ExpValue}{}
+%
+\glsaddall[types={symbols}] % Alle Symbole werden dem Symbolverzeichnis hinzugefügt

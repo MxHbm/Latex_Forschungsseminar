@@ -1,0 +1,54 @@
+\chapter{Erstes Kapitel}
+
+Das \cgls{scm} eines \glsuseri{kmu} ist auszubauen. \cGls{mw} ist groß. \cGls{mw} sollte \acrshort{zB} am Anfang eines Satzes groß geschrieben werden. \glqq \Acrlong{zB}\grqq\xspace kann auch ausgeschrieben werden. Die Befehle \verb|\cgls{}| bzw. \verb|\cGls{}| zählen die Verwendung einer Abkürzung und fügen sie dem Abkürzungsverzeichnis hinzu, wenn sie mindestens zweimal verwendet wird. Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text \glssymbol{E} Text \glssymbol{V} Text \glssymbol{P} Text \glssymbol{X} Text Text Text Text Text Text Text Text Text Text Text Text.
+
+Text \cgls{crm} Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Abbildung~\ref{fig:1}.%
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.1\textwidth]{./pictures/IM-Logo}
+    \caption[Erste Abbildung]{Erste Abbildung\footnotemark}\label{fig:1}
+\end{figure}\footnotetext{Eigene Abbildung.}
+
+Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text \cgls{scm} Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text\footnote{Fußnotentext.} Text Text Text Text Text Text Text Text Tabelle~\ref{tab:1}.%
+
+\begin{table}[tb]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        A & B & C \\
+        \midrule
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Erste Tabelle}\label{tab:1}
+\end{table}
+Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text \cgls{kmu} Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text. Wie \citeauthor{HinzH1:2009} zeigen, Text Text.\footcite[Vgl.][33]{HinzH1:2009} Text Text \cgls{crm}.
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}%[scale=0.975]
+        \begin{axis}[
+                xmin=-0.5, xmax=5,
+                ymin=-0.5, ymax=5,
+                xtick={1,...,4},
+                ytick={1,...,4},
+                axis y line=center,
+                axis x line=middle,
+                ylabel={$y$},
+                xlabel={$x$},
+                xlabel style={below right},
+                ylabel style={above left},
+            ]
+
+            \node (A) at (axis cs:2,1) {};
+            \node[right] at (A) {$A$};
+            \draw[fill] (A) circle [radius=1.75pt];
+
+        \end{axis}
+    \end{tikzpicture}
+    \caption[Abbildungsunterschrift]{Abbildungsunterschrift\footcite[Vgl.][39]{HinzH1:2009}}
+\end{figure}
+
+Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text. Verweis mit mehreren Quellenangaben.\footcites(Vgl.)()[][24]{HinzH1:2009}[][15]{KunzK1:2010}
