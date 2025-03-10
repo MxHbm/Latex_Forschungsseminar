@@ -1,0 +1,9 @@
+#Ignore all files in the aux folder 
+aux/.*
+/aux/*
+
+
+#Ignore all log files 
+*.log
+
+
