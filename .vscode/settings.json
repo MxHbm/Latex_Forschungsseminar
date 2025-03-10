@@ -10,6 +10,15 @@
                 "pdflatex",
                 "makeglossaries",
                 "pdflatex",
+                "pdflatex",
+            ]
+        },
+        {
+            "name": "pdflatex, biber, pdflatex (2x)",
+            "tools": [
+                "pdflatex",
+                "biber",
+                "pdflatex",
                 "pdflatex"
             ]
         },
@@ -30,6 +39,16 @@
                 "-file-line-error",
                 "-output-directory=%OUTDIR%",
                 "%DOC%"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%",
+                "--input-directory=%OUTDIR%",
+                "--output-directory=%OUTDIR%"
+                //"%DOCFILE%",
             ]
         },
         {
