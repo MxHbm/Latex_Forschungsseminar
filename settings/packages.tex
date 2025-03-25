@@ -5,11 +5,10 @@
 \usepackage{scrhack}
 \usepackage{microtype}
 \usepackage{tikz,pgfplots}
-	\pgfplotsset{compat=newest}
+\pgfplotsset{compat=newest}
 \usepackage[chapter]{algorithm} % Falls das Paket floatrow geladen wird, muss dieses Paket danach geladen werden.
-	\iflanguage{english}{\floatname{algorithm}{Algorithm}\renewcommand{\listalgorithmname}{List of Algorithms}}{\floatname{algorithm}{Algorithmus}\renewcommand{\listalgorithmname}{Algorithmenverzeichnis}} % Algorithm-Umgebung an die verwendete Sprache anpassen
-
-
+\iflanguage{english}{\floatname{algorithm}{Algorithm}\renewcommand{\listalgorithmname}{List of Algorithms}}{\floatname{algorithm}{Algorithmus}\renewcommand{\listalgorithmname}{Algorithmenverzeichnis}} % Algorithm-Umgebung an die verwendete Sprache anpassen
+\usepackage{comment}
 
 
 
@@ -20,21 +19,21 @@
 %################ Notwendige Pakete laden #######################
 
 \usepackage[bibencoding=auto,citestyle=authoryear-ibid,bibstyle=authoryear,natbib=true,]{biblatex}% Vergessen Sie nicht in den Optionen das Bibliographieprogramm auf "biber" umzustellen! Um die Vorlage mit BibTeX nutzen zu können, muss die Option "backend=bibtex" übergeben werden. Es ist jedoch biber zu empfehlen, beachten Sie dazu die Hinweise der biblatex-Paketdokumentation im Abschnitt 3.15 "Using the fallback BibtTeX backend".
-	\usepackage{settings/BiblatexSetup}
+\usepackage{settings/BiblatexSetup}
 \AfterPackage*{biblatex}%
 {
 	\RequirePackage[breaklinks=true, colorlinks=false, linktoc=section, linkcolor=blue, citecolor=black, hidelinks]{hyperref}
-		% Da hyperref allerhand Veränderungen an vielen Standardbefehlen vornimmt, sollte dieses als letztes in der Präambel eingebunden werden. Nur Pakete, bei denen in der Dokumentation explizit darauf hingewiesen wird, dass diese nach hyperref zu laden sind, sollten auch danach folgen.
-		\hypersetup{pdfprintscaling=None} % gleiches Verhalten, auch ohne hyperref, liefert: \pdfcatalog{/ViewerPreferences<</PrintScaling/None>>}
+	% Da hyperref allerhand Veränderungen an vielen Standardbefehlen vornimmt, sollte dieses als letztes in der Präambel eingebunden werden. Nur Pakete, bei denen in der Dokumentation explizit darauf hingewiesen wird, dass diese nach hyperref zu laden sind, sollten auch danach folgen.
+	\hypersetup{pdfprintscaling=None} % gleiches Verhalten, auch ohne hyperref, liefert: \pdfcatalog{/ViewerPreferences<</PrintScaling/None>>}
 	\usepackage{footnote} % https://tex.stackexchange.com/questions/207192/footcite-in-float-caption
-		\makesavenoteenv{figure}
-		\makesavenoteenv{table}
-		\makesavenoteenv{algorithm}
+	\makesavenoteenv{figure}
+	\makesavenoteenv{table}
+	\makesavenoteenv{algorithm}
 }
 \AfterPackage*{hyperref}
 {
 	\RequirePackage[automake,acronym,symbols,nomain,translate=babel,]{glossaries}
-		\usepackage{settings/GlossariesSetup}
+	\usepackage{settings/GlossariesSetup}
 }
 
 %############## Ideas for packages #####################´

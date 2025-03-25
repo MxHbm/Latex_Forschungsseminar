@@ -6,4 +6,6 @@ aux/.*
 #Ignore all log files 
 *.log
 
-
+#Ignore all DS_store files 
+*.DS_Store
+.DS_Store

@@ -2,10 +2,12 @@
 \glsenableentrycount % aktiviert \cgls, \cglspl, \cGls, \cGlspl, siehe https://tex.stackexchange.com/questions/98494/glossaries-dont-print-single-occurences/230664#230664
 
 % Abkürzungen, die im Abkürzungsverzeichnis auftauchen und automatisch durch das glossaries-Paket sortiert werden
-\newacronym{crm}{CRM}{Customer Relationship Management}
-\newacronym{scm}{SCM}{Supply Chain Management}
 \newacronym[longplural={klein- und mittelständige Unternehmen},user1={klein- und mittelständigen Unternehmens}, description=Klein- und mittelständiges Unternehmen]{kmu}{KMU}{klein- und mittelständiges Unternehmen} % description tag setzt das Erscheinungsbild des Textes im Abkürzungsverzeichnis
 \newacronym[description=Meine Welt]{mw}{mW}{meine Welt}
+\newacronym{CLP}{CLP}{Container Loading Problem}
+\newacronym{crm}{CRM}{Customer Relationship Management}
+\newacronym{scm}{SCM}{Supply Chain Management}
+\newacronym{VRP}{VRP}{Vehicle Routing Problem}
 
 % Abkürzungen, die nicht im Abkürzungsverzeichnis aufgeführt werden
 \newabbreviation{zB}{z.\,B.}{zum Beispiel}
@@ -20,7 +22,7 @@
 \newsymb{E}{Erwartungswert}{\mathbb{E}\left(\cdot\right)}{}
 \newsymb{P}{Wahrscheinlichkeitsmaß}{\mathbb{P}\left(\cdot\right)}{}
 \newsymb{V}{Varianz}{\mathbb{V}\left(\cdot\right)}{}
-\newsymb{X}{Zufallsvariable}{X}{} 
+\newsymb{X}{Zufallsvariable}{X}{}
 %
 % Oder so verwenden und im Fließtext dann mit $\ExpValue$ arbeiten:
 %\newcommand{\ExpValue}{\mathbb{E}\left(\cdot\right)}

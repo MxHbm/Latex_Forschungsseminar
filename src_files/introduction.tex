@@ -1,56 +1,34 @@
-\chapter{Erstes Kapitel}
+\chapter{Introduction}
 
-Das \cgls{scm} eines \glsuseri{kmu} ist auszubauen. \cGls{mw} ist groß. \cGls{mw} sollte \acrshort{zB} am Anfang eines Satzes groß geschrieben werden. \glqq \Acrlong{zB}\grqq\xspace kann auch ausgeschrieben werden. Die Befehle \verb|\cgls{}| bzw. \verb|\cGls{}| zählen die Verwendung einer Abkürzung und fügen sie dem Abkürzungsverzeichnis hinzu, wenn sie mindestens zweimal verwendet wird. Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text \glssymbol{E} Text \glssymbol{V} Text \glssymbol{P} Text \glssymbol{X} Text Text Text Text Text Text Text Text Text Text Text Text.
+The task of packing several items with different geometries and sizes into a container
+is a common problem in logistics and supply chain management. It occurs in several
+different situations, such as loading cargo ships, trucks, or airplanes,
+as well as in warehouse management and packing of pallets or cardboards with
+smaller items \parencite{bortfeldt_constraints_2013}.
 
-Text \cgls{crm} Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Abbildung~\ref{fig:1}.%
+The challenge of packing items into a container is to find an optimal arrangement or for
+complex problems, a feasible arrangement of items in the container,
+such that the packing is applicable \parencite{krebs_advanced_2021}.
+The \gls{CLP} for multi-dimensional cases is a well-known NP-hard problem. Therefore
+only few exact approaches exist and the majority of publications focuses on
+heuristics to obtain good solutions. The packing is further complicated by the presence
+of constraints, such as item orientation, stability, and load-bearing capacity.
+These constraints portay a more realistic picture of the problems encountered in practice
+\parencite{bortfeldt_constraints_2013}.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.1\textwidth]{./pictures/IM-Logo}
-    \caption[Erste Abbildung]{Erste Abbildung\footnotemark}\label{fig:1}
-\end{figure}\footnotetext{Eigene Abbildung.}
+When the focus of generating feasible packings is more important than finding the best
+packing solution, it is possible to predict the feasibility with a trained model instead
+of computing the exact solution. This approach was used in the paper \cite{zhang_learning-based_2022}
+and significantly reduced the computation time for the integrated 2D packing problem
+of the \gls{VRP}. However, the underlying constraints and assumptions do not reflect
+a realistic scenario. Therefore, this paper aims to explore and analyze various
+constraint datasets used in the 3D \gls{CLP}, laying the groundwork for feasibility
+prediction of 3D packings under realistic constraints.
 
-Text Text Text Text Test Test Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text \cgls{scm} Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text\footnote{Fußnotentext.} Text Text Text Text Text Text Text Text Tabelle~\ref{tab:1}.%
+The paper is structured as follows: In the next chapter, the \gls{CLP} is formally defined
+and different constraints are discussed. Chapter 3 gives an overview of classical solution
+approaches and their limitations. Chapter 4 motivates the use of feasibility prediction
+and gives an overview of machine learning classifiers. Chapter 5 compares available datasets
+and justifies the selection of the dataset used in this paper. The conclusion and outlook
+are presented in Chapter 6.
 
-
-\begin{table}[tb]
-    \centering
-    \begin{tabular}{ccc}
-        \toprule
-        A & B & C \\
-        \midrule
-        1 & 2 & 3 \\
-        4 & 5 & 6 \\
-        \bottomrule
-    \end{tabular}
-    \caption{Erste Tabelle}\label{tab:1}
-\end{table}
-Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text \cgls{kmu} Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text. Wie \citeauthor{bortfeldt_constraints_2013} zeigen, Text Text.\footcite[Vgl.][33]{ceschia_local_2013} Text Text \cgls{crm}.
-
-\begin{figure}[h]
-    \centering
-    \begin{tikzpicture}%[scale=0.975]
-        \begin{axis}[
-                xmin=-0.5, xmax=5,
-                ymin=-0.5, ymax=5,
-                xtick={1,...,4},
-                ytick={1,...,4},
-                axis y line=center,
-                axis x line=middle,
-                ylabel={$y$},
-                xlabel={$x$},
-                xlabel style={below right},
-                ylabel style={above left},
-            ]
-
-            \node (A) at (axis cs:2,1) {};
-            \node[right] at (A) {$A$};
-            \draw[fill] (A) circle [radius=1.75pt];
-
-        \end{axis}
-    \end{tikzpicture}
-    \caption[Abbildungsunterschrift]{Abbildungsunterschrift\footcite[Vgl.][39]{zhang_hybrid_2017}}
-\end{figure}
-
-
-Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text. Verweis mit mehreren Quellenangaben.\footcites(Vgl.)()[][24]{gendreau_tabu_2006}[][15]{krebs_advanced_2021}
