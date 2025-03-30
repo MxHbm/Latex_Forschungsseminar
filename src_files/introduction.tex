@@ -1,29 +1,31 @@
 \chapter{Introduction}
 
+Hier shcon auf den Anwendungsfall VRP, Tourenplanubng eingehen
+
 The task of packing several items with different geometries and sizes into a container
 is a common problem in logistics and supply chain management. It occurs in several
 different situations, such as loading cargo ships, trucks, or airplanes,
 as well as in warehouse management and packing of pallets or cardboards with
-smaller items \parencite{bortfeldt_constraints_2013}.
+smaller items \footcite[cf.][p.1]{bortfeldt_constraints_2013}.
 
 The challenge of packing items into a container is to find an optimal arrangement or for
 complex problems, a feasible arrangement of items in the container,
-such that the packing is applicable \parencite{krebs_advanced_2021}.
+such that the packing is applicable \footcite[cf.][p.2-3]{tamke_branch-and-cut_2024}.
 The \gls{CLP} for multi-dimensional cases is a well-known NP-hard problem. Therefore
 only few exact approaches exist and the majority of publications focuses on
 heuristics to obtain good solutions. The packing is further complicated by the presence
 of constraints, such as item orientation, stability, and load-bearing capacity.
 These constraints portay a more realistic picture of the problems encountered in practice
-\parencite{bortfeldt_constraints_2013}.
+\footcite[cf.][p.377-378]{bischoff_issues_1995}.
 
 When the focus of generating feasible packings is more important than finding the best
 packing solution, it is possible to predict the feasibility with a trained model instead
 of computing the exact solution. This approach was used in the paper \cite{zhang_learning-based_2022}
-and significantly reduced the computation time for the integrated 2D packing problem
+and significantly reduced the computation time for the integrated \gls{2D} packing problem
 of the \gls{VRP}. However, the underlying constraints and assumptions do not reflect
 a realistic scenario. Therefore, this paper aims to explore and analyze various
-constraint datasets used in the 3D \gls{CLP}, laying the groundwork for feasibility
-prediction of 3D packings under realistic constraints.
+constraint datasets used in the \gls{3D} \gls{CLP}, laying the groundwork for feasibility
+prediction of \gls{3D} packings under realistic constraints.
 
 The paper is structured as follows: In the next chapter, the \gls{CLP} is formally defined
 and different constraints are discussed. Chapter 3 gives an overview of classical solution

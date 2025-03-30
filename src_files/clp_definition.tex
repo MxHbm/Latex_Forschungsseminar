@@ -1,67 +1,56 @@
 \chapter{The Container Loading Problem}
-\section{Formal Problem Definition}
-\section{Computational Complexity and NP-hardness}
 
-The placement and assignment of three-dimensional items to larger, mostly rectangular
+The placement and assignment of \gls{3D} items to larger, mostly rectangular
 containers, is a well known problem in logistics and operations research, as the
 potential of cost savings and efficiency gains is substantial by reducing the number
-of needed containers or by fulfilling customer needs. \gls{CLP} problems are differentiated
-by \cite{bortfeldt_constraints_2013} in \textit{input minimization}, where the number
-of needed containers is minimized, and \textit{output maximization} problems, where the
-value of the associated items is maximized. So, is the \gls{BPP} belonging
+of needed containers or by fulfilling customer needs \footcite[cf.][p.1]{bortfeldt_constraints_2013}.
+\gls{CLP} problems are differentiated by \cite{bortfeldt_constraints_2013} in \textit{input minimization},
+where the number of needed containers is minimized, and \textit{output maximization} problems,
+where the value of the associated items is maximized. So, is the \gls{BPP} belonging
 to \textit{input minimization} problems, and the \gls{KP} to \textit{output maximization}.
 
 Apart from the expected outcome of the optimization, the characterics of the items
 and containers is relevant for the problem definition. Items can be either homogenous or heterogenous,
 where homogenous items are identical in size and shape, and heterogenous items are
-different in size and shape. The container is usually defined as a three-dimensional space
-with a fixed size and shape, where the items have to be placed in \parencite{bortfeldt_constraints_2013}.
+different in size and shape. The container is usually defined as a gls{3D} space
+with a fixed size and shape, where the items have to be placed in.
 Other - non rectangular - shapes are scarcely considered in the literature, as the practical relevance is
-limited \parencite{bortfeldt_constraints_2013}. Multiple containers, with homogeneous
+limited \footcite[cf.][p.1-2]{bortfeldt_constraints_2013}. Multiple containers, with homogeneous
 or heterogenous size,  are used, whenever the volume and weight of the items requires it.
 A possible placement of cargo into a container can be seen in Figure \ref{fig:solution-visualization}.
-%Hier angeben welcher Typ betrachtet wird? 
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=7cm]{pictures/3l_cvrp_example.png}
-    \caption{Visualization from \cite{tamke_branch-and-cut_2024}.}
+    \caption{Visualized 3D packing with packing constraints\footnotemark}.
+    \footnotetext{Visualization from \cite{tamke_branch-and-cut_2024}}
     \label{fig:solution-visualization}
 \end{figure}
 
-\section{Constraints in the CLP}
-The placement of items is not sufficient, if there is a possible packing
-of the items, but practical requirements are not met according to \cite{bischoff_issues_1995}.
-Based on the original impulse of \cite{bischoff_issues_1995}, \cite{bortfeldt_constraints_2013}
-have systemized all constrains relevant for the \gls{CLP} in five groups.
-\begin{itemize}
-    \item[1] Container related constraints
-    \item[2] Item related constraints
-    \item[3] Cargo related constraints
-    \item[4] Positioning constraints
-    \item[5] Load related constraints
-\end{itemize}
-
-% Hier die constriants hinzufügen, die immer gelten, 
-% items immer parallel zu wänden gepackt und so 
-
-
+According to \cite{bischoff_issues_1995}, the mere placement of items is insufficient
+if practical requirements are not fulfilled. Building on this insight,
+\cite{bortfeldt_constraints_2013} systematically categorized all constraints relevant
+to the \gls{CLP} into five groups. They also distinguish between hard and soft constraints,
+where hard constraints must be strictly satisfied, while soft constraints may be violated
+to some extent, depending on the implementation context.
+It should also be noted that, by referring to the standard problems of \gls{CaP},
+certain assumptions are implicitly adopted. For instance, in line with common
+practice in the literature only orthogonal placements are allowed, so box surfaces must be
+aligned parallel to the container floor and walls \footcite[cf.][p.2]{bortfeldt_constraints_2013}
 
 \subsubsection{Container related constraints}
 These constraints summarize all physical barriers of the container, including
-the accumulated \textbf{weight} and \textbf{volume} of the cargo. These two
-constraints are usually found in the \gls{CVRP}. The distribution of the weight
+the accumulated \textbf{weight} and \textbf{volume} of the cargo. The distribution of the weight
 (\textbf{load balance}) plays also an important role for safety reasons, as the
 cargo must not move during the transport and the container must not tip over.
 In the special case of trucks, uneven axle weight distribution can cause severe
-crash consequences \parencite{krebs_advanced_2021}.
+crash consequences and need to be avoided \footcite[cf.][p.849-850]{krebs_advanced_2021}.
 
 \subsubsection{Item related constraints}
 Item related constraints define the properties of the item, which are relevant
 for the packing. When the container capacity is limited (\textit{output maximization}),
 the \textbf{loading priority} constraint can define the priority among possible
-item candidates. For each item, which has to be packed, other constraints define
-the way how items can be packed. The orientation constraint limits how the item
+item candidates. The orientation constraint limits how the item
 can be rotated: it can either rotate only around the z-axis or be completely
 free to rotate in all directions, with no partial flexibility in between.
 When three dimesional packing is considered, the \textbf{stacking} constraint
@@ -70,6 +59,74 @@ differentiates between \textit{fragile} and \textit{non-fragile} items, stating
 that non-fragile items can only be stacked on non-fragile items, Figure \ref{fig:stacking_comparison} showcases
 this definition. A more sophisticated approach is the calculation  of the
 \textit{load-bearing strength} of each box, stating how much pressure the box
-can tolerate \cite{krebs_advanced_2021}.
+can tolerate \footcite[cf.][p.847-848]{krebs_advanced_2021}.
 
 \input{tikz/fragile_non_fragile.tex}
+
+\subsubsection{Cargo-Related Constraints}
+In contrast to item-related constraints, cargo-related constraints apply to
+the entire cargo or to specific subsets of it. The \textbf{complete-shipment constraint}
+requires that all items within a shipment must either be loaded into the same
+container or be left behind entirely. This constraint is especially important
+when container capacity is limited (\textit{output maximization}) and items
+cannot be split.The \textbf{allocation constraint} serves a similar purpose.
+It includes the \textbf{connectivity constraint}, which mandates that
+certain items must be loaded into the same container, and the
+\textbf{separation constraint}, which requires specific items to
+be distributed across different containers. For example, kitchen
+shipments—comprising multiple packages-should be delivered together
+to enable efficient installation. Conversely, items such as perfume and fresh
+vegetables should be shipped separately due to incompatibility.
+
+\subsubsection{Positioning constraints}
+
+Positioning constraints in container loading determine where items are placed,
+either in absolute or relative terms, and can be modeled as hard or soft
+constraints. It can be differentiated in seveeral groups. The
+\textbf{absolute positioning constraints} specify that certain items
+must (or must not) be placed in specific areas of the container. These are
+typically based on item characteristics such as size, weight, or
+content (e.g., bulky or hazardous items placed near the container door for accessibility).
+\textbf{Relative positioning constraints} govern how items are arranged in
+relation to each other. Either close to each other as \textit{group} or
+\textit{separate} from each other. This differentiation is similar to the
+\textit{allocation constraint} of the cargo-related constraints, but considers
+only one container. The \textbf{multi-drop constraints} combine
+absolute and relative positioning requirements when items are destined for
+different deliverym locations. These constraints aim to minimize reloading
+efforts by grouping items by delivery destination, by arranging item groups
+in accordance with the delivery sequence and/or by applying a
+\textit{\gls{LIFO}} or \textit{sequential loading policy}
+to ensure efficient unloading without moving unrelated items. These
+types of positioning constraints are widely discussed in the iterature due
+to their practical relevance in real-world logistics operations.
+
+\subsubsection{Load-related constraints}
+
+The \textbf{stability constraint} is defined as one of the most critical constrains
+in the \gls{CLP}, as it directly impacts
+the safety of both the cargo and the personnel involved. First, a distinction
+must be made between \textit{horizontal} and \textit{vertical} stability.
+Horizontal stability is achieved when items are securely connected to the
+container walls or to other items, preventing lateral movement. Vertical
+stability, on the other hand, is defined in various ways throughout the
+literature. One common approach evaluates the supporting area — the portion
+of an item's base that rests on the surface below. Stability is often
+considered sufficient if the support area covers between 70\% and 100\% of the base
+of the item stacked on top. However, this can still cause unstable
+configurations (see Figure~\ref{fig:vertical_stability_comparison}). To address this,
+a more robust definition of vertical stability involves the
+\textit{center of balance} of the upper item. According to this definition,
+vertical stability is ensured only if the center of balance of the item on top
+lies within the supporting area of the item below. It is also essential to
+ensure that the load remains stable even after parts of the cargo have been
+unloaded. In addition, \textbf{complexity constraints} refer to specialized
+requirements that extend beyond standard packing rules. These include,
+for example, compatibility with automated or robot-assisted packing systems.
+
+\input{tikz/vertical_stability.tex}
+
+\begin{comment}
+Eventuelle Tabelle!, die darstelt welche constraints in der Literatur zu finden
+und welche nicht
+\end{comment}

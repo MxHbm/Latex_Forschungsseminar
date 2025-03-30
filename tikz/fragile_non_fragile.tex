@@ -8,17 +8,17 @@
             \draw[thick] (0,0) rectangle (5,3);
 
             % Draw the three items inside
-            \draw[] (3,0) rectangle (5,0.75);
+            \draw[fill=blue!20] (3,0) rectangle (5,0.75);
             \node at (4, 0.5) {};
 
-            \draw[] (3,0.75) rectangle (5,1.5);
+            \draw[fill=green!20] (3,0.75) rectangle (5,1.5);
             \node at (4, 1.125) {Fragile};
 
-            \draw[] (3,1.5) rectangle (5, 2.25);
+            \draw[fill=green!20] (3,1.5) rectangle (5, 2.25);
             \node at (4, 1.875) {Fragile};
 
         \end{tikzpicture}
-        \caption{Feasible stacking of the items}
+        \caption{Feasible stacking of items}
     \end{subfigure}
     \hfill
     % Second TikZ picture
@@ -28,17 +28,17 @@
             \draw[thick] (0,0) rectangle (5,3);
 
             % Draw the three items inside
-            \draw[] (3,0) rectangle (5,0.75);
+            \draw[fill=blue!20] (3,0) rectangle (5,0.75);
             \node at (4, 0.5) {};
 
-            \draw[] (3,0.75) rectangle (5,1.5);
+            \draw[fill=green!20] (3,0.75) rectangle (5,1.5);
             \node at (4, 1.125) {Fragile};
 
-            \draw[] (3,1.5) rectangle (5, 2.25);
+            \draw[fill=blue!20] (3,1.5) rectangle (5, 2.25);
             \node at (4, 1.875) {};
         \end{tikzpicture}
-        \caption{Non-feasible stacking of the items}
+        \caption{Infeasible stacking of items}
     \end{subfigure}
-    \caption{Comparison fragile stacking}
+    \caption{Comparison fragile stacking \footnote{Own figure}}
     \label{fig:stacking_comparison}
 \end{figure}
