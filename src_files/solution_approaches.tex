@@ -18,15 +18,13 @@ components from the other three categories.
 These categories will now be explained more in detail.
 
 \subsubsection{Constructive Heuristics}
-
 Depending on the heterogeneity of the items, two primary strategies are commonly used to
 obtain an initial feasible solution. In cases where the items are weakly homogeneous,
 the problem's dimensionality is reduced from \gls{3D} to \gls{2D} by constructing either
 \textbf{walls} or \textbf{layers} of similarly sized items. These structures fill one
-dimension of the container—typically either length and height or width and height—thereby
+dimension of the container—typically either length and height or width and length, thereby
 simplifying the remaining problem space. Moreover, when these layers or walls are of
-approximately equal dimensions, both horizontal and vertical stability constraints are
-inherently satisfied.
+approximately equal dimensions, both horizontal and vertical stability constraints are met.
 Beyond these two dominant approaches, several adaptations exist to address item heterogeneity.
 For example, \citeauthor{gehring1997genetic} propose the construction of item
 \textbf{towers}, in which boxes are stacked on top of others with identical base dimensions.
@@ -36,24 +34,41 @@ composed of identically shaped items. These blocks are treated as single entitie
 during packing, significantly reducing the number of elements to be handled and thus
 lowering overall problem complexity.
 
+\subsubsection{Metaheuristics}
+Once an initial solution is found, metaheuristics or improvement heuristics can be applied
+to enhance it. In contrast to constructive heuristics, these methods require a solution
+representation such as a permutation of items in order to perform item moves. \gls{GA}s were
+used to either improve the walls, towers or layers constructed by the constructive heuristics
+or by improving the quality of the permutation of all items.
+\gls{TS} in general is widely spread approach for \gls{BPP} and \gls{CLP} problems. It is based on
+the idea of iteratively improving a solution by exploring its neighborhood and simultaneously
+storing certain moves or complete solutions in a tabu list to avoid cycling back to
+previous solutions, feasible or infeasible ones. \gls{SA} has rarely been used as a
+standalone metaheuristic in the context of \gls{3D} \gls{CLP}. Instead, it is often combine
+with other approaches to leverage its cooling schedule, which allows the acceptance of
+worse solutions at higher temperatures. This helps the algorithm to escape local optima
+early in the search and gradually transition into a more focused intensification phase as
+the temperature decreases. \gls{GRASP} has the advantage of controlling the selection of new
+cuboid candidates along a spectrum between completely random and fully greedy choices.
 
-\subsubsection{Constructive Heuristics}
-Depending on the heterogenity of the items, two possible approaches for finding the first
-feasible solution exist. When the items are weakly homogenous, the algorithms aim to reduce
-the the complexity from \gls{3D} to \gls{2D} by \textbf{building walls or layers} of homogenous items.
-These layers fill one dimension of the container, whether length and width or length and width.
-Consequently, the remaining space of the container is reduced and the problem becomes smaller.
-Additionally, when these layers and walls have approcimately the same dimensions, horizontal
-and vertical stability constraints are met. Apart from these two dominant/ well known approaches,
-adaptions exist. For heterogeneous items, \citeauthor{gehring1997genetic},
-suggest to build towers of items, stacking, them on the exact identical sized area, and then
-concentrate only of floor space of each tower, similar to pallet loading problems. Another approach
-is the building of blocks of idetnicla shapoed items, to reduce the number of boxes and handle
-only the to blocks constructed item, which reduces the complexity of the problem.
+\subsubsection{Exact Algorithms}
+As the \gls{CLP} is a NP-hard problem, retrieving optimal solutions is computationally
+challenging. The main difficulty is to represent packing patterns and the constraints
+introduced in chapter \ref{sec:clp_definition} in a mathematocal mode. Two main methods
+exist for modeling the \gls{CLP} mathematically. Firstly, \gls{MIP}, which focuses on
+integer variables defining the placement and all considered constraints. This method is
+often adapted by a Branch\&Price or Branch\&Cut approach, which helps to reduce the
+search space and improve the solution time. Secondly, \gls{CP} is a more flexible
+approach by defining constraints that variables must satisfy. This methods is used, when
+complex constraints for the \gls{CLP} are considered \footcite[cf.][p.7-11]{tamke_branch-and-cut_2024}.
+In general are exact methods not capable of solving large instances with practical relevance
+in reasonable-computation time. However, they can be used to understand the structure
+of optimal solutions to provide lower bounds and guidance for the development of future
+heuristics \footcite[cf.][p.2]{tamke_branch-and-cut_2024}.
+
+
+
 
 As the variety of \gls{CLP}s is quite broad, this work focuses specifically on
 the application to \gls{VRP} with integrated \gls{3D} container loading. The emphasis lies
 on the verification of packing feasibility, as the total distance is minimized.
-
-\subsubsection{Heuristics and Metaheuristics}
-\subsubsection{Exact Algorithms}

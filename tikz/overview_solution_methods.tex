@@ -1,26 +1,24 @@
 \begin{figure}[htbp]
     \centering
-    \resizebox{0.6\linewidth}{!}
+    \resizebox{0.55\linewidth}{!}
     {
         \begin{tikzpicture}[grow cyclic, text width=2.7cm, align=flush center,
                 level 1/.style={level distance=3.5cm,sibling angle=120},
-                level 2/.style={level distance=3.5cm,sibling angle=45}
+                level 2/.style={level distance=3.5cm,sibling angle=55}
             ]
 
             \node {Solution Techniques \gls{3D} \gls{CLP}}
-            child { node {Exact Methods}
+            child { node {Exact \\ Methods}
                     child { node {\gls{CP}}}
                     child { node {\gls{MIP}}}
                     child { node {Branch \& \\Cut}}
                     child { node {Branch \& Price}}
-                    child { node {Approximation Algorithms}}
                 }
             child { node {Metaheuristics}
-                    child { node {\gls{GA}}}
-                    child { node {\gls{TS}}}
+                    child { node[text width=3cm] {\gls{GRASP}}}
                     child { node {\gls{SA}}}
-                    child { node {Neighborhood Intensification}}
-                    child { node {Bees Algorithm}}
+                    child { node {\gls{TS}}}
+                    child { node {\gls{GA}}}
                 }
             child { node {Constructive Heuristics}
                     child { node {Wall Building}}
@@ -37,28 +35,3 @@
     \label{fig:solution_methods_overview}
 \end{figure}
 
-
-%Wall Building
-\begin{comment}
-Wall-building heuristics: These fill the container by packing a series of vertical walls (sections of boxes) sequentially along the depth​
-EPRINTS.SOTON.AC.UK
-. A classic example is the two-stage algorithm of George & Robinson (1980) which builds walls using ranking rules based on box dimensions and quantities​
-EPRINTS.SOTON.AC.UK
-. Variations include Bischoff & Marriott’s (1990) exhaustive comparison of 14 wall-building heuristics (with different ranking and filling rules) and a combined hybrid approach running all 14 to choose the best result​
-EPRINTS.SOTON.AC.UK
-. Moura & Oliveira (2005) modify the George–Robinson method to adjust how new empty spaces are generated (restricting new wall width for stability)​
-EPRINTS.SOTON.AC.UK
-. Other extensions use tree search to decide wall dimensions instead of fixed rules (Chien & Wu 1998; Pisinger 2002)​
-EPRINTS.SOTON.AC.UK
-, handle multi-destination loads by sequentially packing by destination (Bischoff & Ratcliff 1995)​
-EPRINTS.SOTON.AC.UK
-, or employ a “layer-determining box (LDB)” to define wall thickness (Gehring et al. 1990) and allow remainder spaces to form new walls​
-EPRINTS.SOTON.AC.UK
-. The LDB concept was extended to create blocks of multiple walls (Davies & Bischoff 1999)​
-EPRINTS.SOTON.AC.UK
-. Some algorithms integrate wall-building into metaheuristics, e.g. using the LDB heuristic within a genetic algorithm​
-EPRINTS.SOTON.AC.UK
-or a tabu search​
-EPRINTS.SOTON.AC.UK
-.
-\end{comment}
