@@ -16,4 +16,28 @@
     \label{tab:dataset_comparison}
 \end{table}
 \end{comment}
-test
+
+% --- First 5 columns ---
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{@{}lcccc@{}}
+        \toprule
+        \textbf{Reference} & \textbf{Problem}    & \textbf{Instances}     & \textbf{Customers}   & \textbf{Items}       \\
+        \midrule
+        Ceschia, 2013      & 3L-CVRP             & 13                     & [13, 129]            & [254, 8060]          \\
+        Moura, 2009        & 3L-VRPTW            & 46                     & 25                   & 1050, 1550           \\
+        Gendreau, 2006     & 3L-CVRP             & 27                     & [15, 100]            & [26, 199]            \\
+        Krebs\_a, 2021     & 3L-VRPTW            & 600                    & 20, 60, 100          & 200, 400             \\
+        Krebs\_b, 2021     & 3L-VRPTW            & 80                     & 30, 60, 90, 120      & 200, 400             \\
+        \toprule
+        \textbf{Reference} & \textbf{Item Types} & \textbf{Size of Items} & \textbf{Constraints} & \textbf{Constraints} \\
+        \midrule
+        Ceschia, 2013      & --                  & varied                 & --                   &                      \\
+        Moura, 2009        & --                  & fixed                  & TW                   &                      \\
+        Gendreau, 2006     & [26, 199]           & varied                 & TW                   &                      \\
+        Krebs\_a, 2021     & --                  & fixed/varied           & TW, stacking         &                      \\
+        Krebs\_b, 2021     & 10, 100             & fixed/varied           & TW, stacking         &                      \\
+        \bottomrule
+    \end{tabular}
+    \caption{Dataset overview – part 2: Item and constraint details.}
+\end{table}
