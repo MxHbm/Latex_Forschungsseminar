@@ -1,67 +1,54 @@
 \chapter{Motivation for Feasibility Prediction}
 \label{sec:motivation_feasibility_prediction}
-In this section it will be elaborated which advantages can be be obtained, when
+In this section it will be elaborated which advantages can be obtained, when
 a classifier is used to support the \gls{CLP} decision process. Two papers will be
 analyzed, which use predictive methods to accelerate the computation time. Before that,
-a short introduction to classifiers will be conducted.
-
-It is important to note that several machine learning approaches feature
-online \gls{BP}, where the best placement of items, consecutively available, needs
-to be found, instead of finding one overall placement for all items at once
-(Offline) \footcite[cf.][p. 1]{ali_-line_2022}. As this work focuses on the offline
+a short introduction to classifiers will be conducted. It is important to note that
+several machine learning approaches feature
+online \gls{BP}, where the best placement of single items, consecutively available,
+needs to be found, instead of finding one overall placement for all items at once
+(Offline) \footcite[cf.][p. 1]{ali_-line_2022}. As this work focuses on offline
 \gls{BP}, the online approaches are not further considered, and the focus is laying
-primarily on \gls{ML} classifiers.
-
-A classifier is a type of supervised \gls{ML} algorithm used to predict the
+primarily on \gls{ML} classifiers. These are supervised \gls{ML} algorithm used to predict the
 value of a categorical or binary output column (also known as the label) based on the
 values of other columns, called features. Classifiers learn from a labeled dataset,
 where the correct output values are known in advance, and then use this knowledge to
-make predictions on new, unseen data. A classifier can be implemented using various
-\gls{ML} models as Decision Tree, \cgls{ANN}, \gls{SVM}, \gls{RF}, or others \footcite[cf.][]{kotsiantis_supervised_2007}.
-The following table \ref{tab:classifier_label_data} shows an exemplary dataset with known labels,
-how a classifier model could be trained on.
+make predictions on new, unseen data. The accuracy can be evaluated afterwards by comparing
+the predicted labels with the actual labels \footcite[cf.][]{kotsiantis_supervised_2007}.
+A exemplary training dataset is shown in table \ref{tab:classifier_label_data}.
 
 \input{tables/label_classifier}
 
+A classifier can be implemented using various \gls{ML} models such as decision trees,
+\gls{ANN}s, \gls{SVM}s, \gls{RF}s, or others. However, the most crucial aspect of any
+\gls{ML} algorithm is the selection of data — particularly the choice of features and
+the size of the training set — since many models can be easily preselected from available
+libraries. The model attempts to learn correlations between the provided features
+and the corresponding labels. If the features are poorly chosen, the model may fail
+to capture the underlying patterns in the data. Additionally, if the training set
+is too small, the model might not generalize well, ultimately lacking the ability
+to accurately predict unseen data. Furthermore, it needs to be noted, that available
+\gls{ML} classifier are by nature not superior to others, but can significantly outperform
+others on specific application problem \footcite[cf.][pp. 250, 264]{kotsiantis_supervised_2007}.
 
-
-
-
-\subsubsection{Feasibility Prediction of the \gls{CLP} integrated in \gls{VRP}}
+\subsubsection{Feasibility Classifier of the \cgls{2L-CVRP}}
 A practical application of the \gls{CLP} is the integration in the \gls{VRP}, where
 a number of customers needs to be served with a set of items by a fleet of vehicles that have
 to start from a depot and return. The goal is to minimize the total distance driven
 by the vehicles. When considering multidimensional items, the NP-hard problem itself,
-has the \gls{CLP} alteration, which leads to increased complexity, as every tour is representing
-a \gls{CLP} itself \footcite[cf.][pp.1--2]{tamke_branch-and-cut_2024}.
+increases in complexity, as every tour is representing a \gls{CLP} itself \footcite[cf.][pp. 1--2]{tamke_branch-and-cut_2024}.
 In order to reduce the computational effort of checking the feasibility of the \gls{CLP}
-of single tours, \citeauthor{zhang_learning-based_2022} trained a classifier, which predicts
+of single tours, \citeauthor{zhang_learning-based_2022} trained a \gls{ANN} classifier, which predicts
 the feasibility of the \gls{CLP} for a given tour. This classifier helped to significantly
 reduce the computation time of the \gls{CLP} and had an accuracy of at most $94.1\%$.
 However, some simplifications were made, they focused only on the ground area of the items
-considering a \gls{2D} \gls{CLP} and no further constraints, as unloading, rotation,
+tackling the \cgls{2L-CVRP} and no further constraints, as unloading, rotation,
 or fragility, were considered \footcite[cf.][pp. 4, 14]{zhang_learning-based_2022}.
 
-\subsubsection{Classifier for the \gls{PLP}}
+\subsubsection{Pallet Size Classifier for the \gls{PLP}}
 Another use of a classifier is presented by \citeauthor{aylak_application_2021}, where the pallet
 size is chosen among three possible dimensions based on the number and uniform size of the items.
 The classifier was trained with the results of several packing patterns of real-life datasets
 to optimize the utilization of the pallet. An improvement of $6.7\%$ and a significant reduction
 of the computation time was obtained in comparison to the heuristic approach
-\footcite[cf.][pp. 12--14]{aylak_application_2021}.
-
-
-\section{Trade-off Between Computation Time and Decision Support}
-\section{Use Cases: Pre-filtering and Early-stage Decisions}
-\section{Feasibility Prediction: Methods and Approaches}
-\section{Overview of Machine Learning Classifiers}
-\section{Data Dependency and Bias}
-
-
-
-
-
-
-As the variety of \gls{CLP}s is quite broad, this work focuses specifically on
-the application to \gls{VRP} with integrated \gls{3D} container loading. The emphasis lies
-on the verification of packing feasibility, as the total distance is minimized.
+\footcite[cf.][pp. 12--14]{aylak_application_2021}.\parbreak
