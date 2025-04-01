@@ -1,18 +1,28 @@
 \chapter{Comparison of Available Datasets}
-Annahmen für die eingeführten constraints aus Kapitel 2 aufstellen
-CP Modell, erst in Diplomarbeit erklären,
-VRP als anwendungsbepsiel fpr container loading anmerken
+\label{sec:dataset_selection}
 
-Orthogonal BIn Packing - nur Feasibility prüfen:
-orthogonal Bin Packing - Clautiaux Orthogonal Bin Packing Problem
+This chapter builds upon the insights elaborated in previous chapters to lay the foundation
+for developing a classifier for the \cgls{3L-CVRP} with practical constraints by comparing and
+selecting a suitable dataset. The classifier will be used to predict the feasibility of packing a
+given set of cuboids into a vehicle - representing a single tour - similar to the approach presented
+in Chapter~\ref{sec:motivation_feasibility_prediction} by \citeauthor{zhang_learning-based_2022}.
 
+As discussed in Chapter~\ref{sec:classical_solution_approaches}, the \gls{CLP} is an NP-hard problem,
+making it computationally demanding to verify the packing feasibility of individual routes.
+A classifier can therefore enhance the performance of existing exact algorithms \footcite[cf.][]{tamke_branch-and-cut_2024}
+by reducing the need to compute feasibility exactly - using \cgls{CP} methods - only when a
+final solution is found, or just before columns generated in Branch-and-Price or Branch-and-Cut
+algorithms are discarded \footcite[cf.][pp. 9--11]{zhang_learning-based_2022}. As many single routes
+need to be evaluated this use case has the potential to significantly reduce the overall
+computation time. First, several published \cgls{3L-CVRP} datasets will be compared with respect
+to their overall characteristics. Subsequently, a more detailed analysis will focus on the
+heterogeneity of the items. Finally, a suitable dataset will be selected as a promising foundation
+for developing a classifier.
+
+%\input{tables/instance_comparison.tex}
 
 
 %\section{Overview of Public Datasets}
 %\section{Evaluation Criteria: Diversity, Realism, Labeling, Size}
 %\section{Comparison of Selected Datasets}
 %\section{Justification for Dataset Selection}
-
-As the variety of \gls{CLP}s is quite broad, this work focuses specifically on
-the application to \gls{VRP} with integrated \gls{3D} container loading. The emphasis lies
-on the verification of packing feasibility, as the total distance is minimized.
