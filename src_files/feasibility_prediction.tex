@@ -5,26 +5,27 @@ a classifier is used to support the \gls{CLP} decision process. Two papers will 
 analyzed, which use predictive methods to accelerate the computation time. Before that,
 a short introduction to classifiers will be conducted.
 
+It is important to note that several machine learning approaches feature
+online \gls{BP}, where the best placement of items, consecutively available, needs
+to be found, instead of finding one overall placement for all items at once
+(Offline) \footcite[cf.][p. 1]{ali_-line_2022}. As this work focuses on the offline
+\gls{BP}, the online approaches are not further considered, and the focus is laying
+primarily on \gls{ML} classifiers.
+
 A classifier is a type of supervised \gls{ML} algorithm used to predict the
 value of a categorical or binary output column (also known as the label) based on the
 values of other columns, called features. Classifiers learn from a labeled dataset,
 where the correct output values are known in advance, and then use this knowledge to
 make predictions on new, unseen data. A classifier can be implemented using various
-\gls{ML} models: ...
+\gls{ML} models as Decision Tree, \cgls{ANN}, \gls{SVM}, \gls{RF}, or others \footcite[cf.][]{kotsiantis_supervised_2007}.
+The following table \ref{tab:classifier_label_data} shows an exemplary dataset with known labels,
+how a classifier model could be trained on.
+
+\input{tables/label_classifier}
 
 
 
 
-
-
-
-
-
-It is important to note that several machine learning approaches feature
-online \gls{BP}, where the best placement of items, consecutively available, needs
-to be found, instead of finding one overall placement for all items at once
-(Offline) \footcite[cf.][p. 1]{ali_-line_2022}. As this work focuses on the offline
-\gls{BP}, the online approaches are not further considered.
 
 \subsubsection{Feasibility Prediction of the \gls{CLP} integrated in \gls{VRP}}
 A practical application of the \gls{CLP} is the integration in the \gls{VRP}, where
