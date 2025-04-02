@@ -1,43 +1,33 @@
-\begin{comment}
-\begin{table}[h!]
-    \centering
-    \begin{tabular}{@{}lccccccc@{}}
-        \toprule
-        \textbf{Reference} & \textbf{Problem} & \textbf{Instances} & \textbf{Customers} & \textbf{Items} & \textbf{Item Types} & \textbf{Size of Items} & \textbf{Constraints} \\
-        \midrule
-        Ceschia, 2013      & 3L-CVRP          & 13                 & [13, 129]          & [254, 8060]    &                     & varied                 & --                   \\
-        Moura, 2009        & 3L-VRPTW         & 46                 & 25                 & 1050, 1550     &                     & fixed                  & TW                   \\
-        Gendreua, 2006     & 3L-CVRP          & 27                 & [15, 100]          & [26, 199]      & [26, 199]           & varied                 & TW                   \\
-        Krebs\_a, 2021     & 3L-VRPTW         & 600                & 20, 60, 100        & 200, 400       &                     & fixed/varied           & TW, stacking         \\
-        Krebs\_b 2021      & 3L-VRPTW         & 80                 & 30, 60, 90, 120    & 200, 400       & 10, 100             & fixed/varied           & TW, stacking         \\
-        \bottomrule
-    \end{tabular}
-    \caption{Comparison of published 3L-VRP(TW) datasets and the dataset used in this paper.}
-    \label{tab:dataset_comparison}
-\end{table}
-\end{comment}
-
-% --- First 5 columns ---
-\begin{table}[h!]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{@{}lcccc@{}}
         \toprule
-        \textbf{Reference} & \textbf{Problem}    & \textbf{Instances}     & \textbf{Customers}   & \textbf{Items}       \\
+        \textbf{Reference} & \textbf{Problem}                                                                                                                                             & \textbf{Instances}  & \textbf{Customers}     & \textbf{Rel. Mass Range} \\
         \midrule
-        Ceschia, 2013      & 3L-CVRP             & 13                     & [13, 129]            & [254, 8060]          \\
-        Moura, 2009        & 3L-VRPTW            & 46                     & 25                   & 1050, 1550           \\
-        Gendreau, 2006     & 3L-CVRP             & 27                     & [15, 100]            & [26, 199]            \\
-        Krebs\_a, 2021     & 3L-VRPTW            & 600                    & 20, 60, 100          & 200, 400             \\
-        Krebs\_b, 2021     & 3L-VRPTW            & 80                     & 30, 60, 90, 120      & 200, 400             \\
+        Ceschia, 2013      & 3L-CVRP                                                                                                                                                      & 13                  & [11, 129]              & [0, 0.05]                \\
+        Moura, 2009        & 3L-VRPTW                                                                                                                                                     & 46                  & 25                     & [0, 0.01]                \\
+        Gendreau, 2006     & 3L-CVRP                                                                                                                                                      & 27                  & [15, 100]              & [0, 0.91]                \\
+        Krebs\_a, 2021     & 3L-VRPTW                                                                                                                                                     & 600                 & \{20, 60, 100\}        & [0, 0.58]                \\
+        Krebs\_b, 2021     & 3L-VRPTW                                                                                                                                                     & 80                  & \{30, 60, 90, 120\}    & [0, 0.04]                \\
         \toprule
-        \textbf{Reference} & \textbf{Item Types} & \textbf{Size of Items} & \textbf{Constraints} & \textbf{Constraints} \\
+        \textbf{Reference} & \textbf{Items}                                                                                                                                               & \textbf{Item Types} & \textbf{Min dimension} & \textbf{Max dimensions}  \\
         \midrule
-        Ceschia, 2013      & --                  & varied                 & --                   &                      \\
-        Moura, 2009        & --                  & fixed                  & TW                   &                      \\
-        Gendreau, 2006     & [26, 199]           & varied                 & TW                   &                      \\
-        Krebs\_a, 2021     & --                  & fixed/varied           & TW, stacking         &                      \\
-        Krebs\_b, 2021     & 10, 100             & fixed/varied           & TW, stacking         &                      \\
+        Ceschia, 2013      & [254, 8060]                                                                                                                                                  & [9, 97]             & \{0.1, 0.5, 0.1\}      & \{66, 23, 28.4\}         \\
+        Moura, 2009        & \{1050, 1550\}                                                                                                                                               & 5                   & \{8.1, 3.3, 2.5\}      & \{12, 9.9, 7.3\}         \\
+        Gendreau, 2006     & [26, 199]                                                                                                                                                    & [26, 199]           & \{12, 5, 6\}           & \{36, 15, 18\}           \\
+        Krebs\_a, 2021     & \{200, 400\}                                                                                                                                                 & \{3, 10, 100\}      & \{6, 2, 2\}            & \{35, 14, 14\}           \\
+        Krebs\_b, 2021     & \{200, 400\}                                                                                                                                                 & \{10, 100\}         & \{6, 6, 6\}            & \{25, 12, 15\}           \\
+        \toprule
+        \textbf{Reference} & \multicolumn{4}{p{0.75\textwidth}}{\textbf{Constraints}}                                                                                                                                                                               \\
+        \midrule
+        Ceschia, 2013      & \multicolumn{4}{p{0.75\textwidth}}{\textit{Load Bearing Strength}, Vertical orientation, \textit{Robust Stability}, \textit{Reachability}}                                                                                             \\
+        Moura, 2009        & \multicolumn{4}{p{0.75\textwidth}}{TW, LIFO Unloading, Orientation, Cargo stability  }                                                                                                                                                 \\
+        Gendreau, 2006     & \multicolumn{4}{p{0.75\textwidth}}{Rotation, Support, Fragility, LIFO, Sequence}                                                                                                                                                       \\
+        Krebs\_a, 2021     & \multicolumn{4}{p{0.75\textwidth}}{Vertical orientation, Load-bearing strength, Robust stability, Reachability, Axle weights, balanced loading, manual LIFO}                                                                           \\
+        Krebs\_b, 2021     & \multicolumn{4}{p{0.75\textwidth}}{Vertical orientation, Axle weights, Fragility, Minimal supporting area, LIFO}                                                                                                                       \\
         \bottomrule
     \end{tabular}
     \caption{Dataset overview – part 2: Item and constraint details.}
 \end{table}
+mind that all problems have no overlap and paralell to container walls orientation!
+
