@@ -19,8 +19,8 @@ A exemplary training dataset is shown in table \ref{tab:classifier_label_data}.
 
 \input{tables/label_classifier}
 
-A classifier can be implemented using various \gls{ML} models such as decision trees,
-\gls{ANN}s, \gls{SVM}s, \gls{RF}s, or others. However, the most crucial aspect of any
+A classifier can be implemented using various \gls{ML} models such as decision tree,
+\gls{ANN}, \gls{SVM}, \gls{RF}, or others. However, the most crucial aspect of any
 \gls{ML} algorithm is the selection of data — particularly the choice of features and
 the size of the training set — since many models can be easily preselected from available
 libraries. The model attempts to learn correlations between the provided features
@@ -38,15 +38,15 @@ to start from a depot and return. The goal is to minimize the total distance dri
 by the vehicles. When considering multidimensional items, the NP-hard problem itself,
 increases in complexity, as every tour is representing a \gls{CLP} itself \footcite[cf.][pp. 1--2]{tamke_branch-and-cut_2024}.
 In order to reduce the computational effort of checking the feasibility of the \gls{CLP}
-of single tours, \citeauthor{zhang_learning-based_2022} trained a \gls{ANN} classifier, which predicts
-the feasibility of the \gls{CLP} for a given tour. This classifier helped to significantly
+of single tours, \citeauthor*{zhang_learning-based_2022} trained a \gls{ANN} classifier
+predicting this feasibility. This classifier helped to significantly
 reduce the computation time of the \gls{CLP} and had an accuracy of at most $94.1\%$.
 However, some simplifications were made, they focused only on the ground area of the items
 tackling the \cgls{2L-CVRP} and no further constraints, as unloading, rotation,
 or fragility, were considered \footcite[cf.][pp. 4, 14]{zhang_learning-based_2022}.
 
 \subsubsection{Pallet Size Classifier for the \gls{PLP}}
-Another use of a classifier is presented by \citeauthor{aylak_application_2021}, where the pallet
+Another use of a classifier is presented by \citeauthor*{aylak_application_2021}, where the pallet
 size is chosen among three possible dimensions based on the number and uniform size of the items.
 The classifier was trained with the results of several packing patterns of real-life datasets
 to optimize the utilization of the pallet. An improvement of $6.7\%$ and a significant reduction

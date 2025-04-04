@@ -1,0 +1,30 @@
+\chapter{Introduction}
+\label{sec:introduction}
+Efficiently arranging items of varying shapes and sizes within a container is a fundamental challenge
+in logistics and supply chain management. This \gls{CLP} arises in numerous real-world contexts,
+such as loading cargo onto ships, trucks, and aircraft, as well as optimizing warehouse storage and
+packing of smaller goods into pallets or cardboard boxes\footcite[cf.][p.1]{bortfeldt_constraints_2013}.
+
+\parbreak
+
+The \gls{CLP}, particularly in its multi-dimensional variants, is classified as an NP-hard problem.
+Real-world constraints—such as orientation rules, stability requirements, and load-bearing
+limitations—add further complexity to the problem\footcite[cf.][p.377-378]{bischoff_issues_1995},
+and are elaborated in Chapter~\ref{sec:clp_definition}. As such, exact algorithms are limited to
+small instances, and research has focused on heuristic approaches,
+as discussed in Chapter~\ref{sec:classical_solution_approaches}.
+
+\parbreak
+
+In complex scenarios, recent research demonstrates that \gls{ML} models can help to reduce the computation
+time finding good solutions. Especially classifiers were succesfully integrated in existing algorithms
+and are presenred in Chapter~\ref{sec:motivation_feasibility_prediction} \footcite[cf.][]{zhang_learning-based_2022}.
+A suitable use case for using a classifier is the \gls{3L-CVRP}, where single tours of the \gls{VRP}
+represent a \gls{CLP} with cuboids themselves and numerous tours need to be comutational expensively checked for feasibility
+\footcite[cf.][p. 1]{tamke_branch-and-cut_2024}. However, current research of classifiers of tours
+rely on simplified assumptions that do not fully capture practical constraints. Therefore, suitable \gls{3L-CVRP}
+datasets are compared in Chapter~\ref{sec:dataset_selection} and a suitable dataset is selected to
+lay the foundation for training a classifier. Finally, this paper aims to bridge this gap by examining constraint
+datasets relevant to the \gls{3L-CVRP}, thereby enabling more realistic feasibility predictions for
+future work, which is depicted in Chapter~\ref{sec:conclusion}.
+

@@ -67,12 +67,12 @@ abstract=heading,
 \tableofcontents
 
 % Abbildungsverzeichnis (falls nichts benötigt, einfach als Kommentar setzen)
-%\listoffigures
-%\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\addcontentsline{toc}{chapter}{\listfigurename}
 
 % Tabellenverzeichnis (falls nichts benötigt, einfach als Kommentar setzen)
-%\listoftables
-%\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\addcontentsline{toc}{chapter}{\listtablename}
 
 % Algorithmenverzeichnis (falls nichts benötigt, einfach als Kommentar setzen)
 %\listofalgorithms
@@ -81,33 +81,30 @@ abstract=heading,
 \microtypesetup{protrusion=true}
 
 %Abkürzungsverzeichnis (falls nichts benötigt, einfach als Blockkommentar setzen)
-%\printacronyms[style=bwlimsuper]
-%\addcontentsline{toc}{chapter}{\acronymname}
+\printacronyms[style=bwlimsuper]
+\addcontentsline{toc}{chapter}{\acronymname}
 
 % Symbolverzeichnis (falls nichts benötigt, einfach als Blockkommentar setzen)
-%\printsymbols[style=symblong, title=\listsymbolname]
-%\addcontentsline{toc}{chapter}{\listsymbolname}
+% \printsymbols[style=symblong, title=\listsymbolname]
+% \addcontentsline{toc}{chapter}{\listsymbolname}
 
 
 %############### Einstellungen für Fließtext setzen ####################
 \clearpage
 \setcounter{page}{1}\pagenumbering{arabic}
 
-
 %####################### Fließtext ####################
 
-% Introduction
-\input{src_files/introduction.tex}
-\input{src_files/clp_definition.tex}
-\input{src_files/solution_approaches.tex}
-\input{src_files/feasibility_prediction.tex}
-\input{src_files/data_selection.tex}
-% Main Part
-\input{src_files/main.tex}
+\input{src_files/0_introduction.tex}
+\input{src_files/1_clp_definition.tex}
+\input{src_files/2_solution_approaches.tex}
+\input{src_files/3_feasibility_prediction.tex}
+\input{src_files/4_data_selection.tex}
+\input{src_files/5_conclusion.tex}
 
 
 %####################### Appendix #########################
-\include{src_files/appendix}
+%\include{src_files/appendix}
 \clearpage
 %####################### Literaturverzeichnis #########################
 \addcontentsline{toc}{chapter}{\bibname}
@@ -118,7 +115,7 @@ abstract=heading,
 
 %####################### Platzhalter - Abkürzungsverzeichnis muss erstellt werden####################
 
-\printacronyms[style=bwlimsuper]
+%\printacronyms[style=bwlimsuper]
 
 %####################### End of Document ####################
 \end{document}

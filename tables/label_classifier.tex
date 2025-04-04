@@ -1,19 +1,17 @@
 \begin{table}[h!]
+    \small
     \centering
-    \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
+    \begin{tabular}{@{}cccccc@{}}
+        \toprule
         \textbf{Case} & \textbf{Feature 1} & \textbf{Feature 2} & \dots  & \textbf{Feature n} & \textbf{Label} \\
-        \hline
+        \midrule
         1             & xxx                & x                  & \dots  & xx                 & True           \\
-        \hline
         2             & xxx                & x                  & \dots  & xx                 & False          \\
-        \hline
         3             & xxx                & x                  & \dots  & xx                 & True           \\
-        \hline
         \vdots        & \vdots             & \vdots             & \vdots & \vdots             & \vdots         \\
-        \hline
+        \bottomrule
     \end{tabular}
-    \caption{Train data consisting of instances with known labels \footnotemark}
+    \caption[Train data consisting of instances with known labels]{Train data consisting of instances with known labels \footnotemark}
     \footnotetext{Adapted table from \cite{kotsiantis_supervised_2007}.}
     \label{tab:classifier_label_data}
 \end{table}
