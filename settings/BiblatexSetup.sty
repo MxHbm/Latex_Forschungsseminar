@@ -1,4 +1,4 @@
-\ExecuteBibliographyOptions{ibidtracker=constrict,dashed=false,bibwarn=true,sortlocale=auto,arxiv=false,isbn=true,url=true,doi=false,eprint=false,%
+\ExecuteBibliographyOptions{ibidtracker=constrict,dashed=false,bibwarn=true,sortlocale=auto,arxiv=false,isbn=true,url=false,doi=false,eprint=false,%
 	maxcitenames=3,maxbibnames=100,uniquename=false,uniquelist=false,giveninits=true,date=year%
 	% authortitle-dw options
 	%namefont=smallcaps,firstnamefont=smallcaps,nopublisher=false,idembib=false,edbyidem=false,addyear=true,journalnumber=afteryear,series=afteryear,safeinputenc=true
@@ -23,7 +23,7 @@
 %\renewcommand*{\jourvolstring}{\space Vol.\space}
 
 \setcounter{biburllcpenalty}{9000}
-\setcounter{biburlucpenalty}{9000}
+\setcounter{biburllcpenalty}{9000}
 
 \DeclareFieldFormat*{title}{#1\isdot} %[article,book,inbook,incollection,inproceedings,misc,patent,report,thesis,unpublished]
 \DeclareFieldFormat*{citetitle}{\mkbibemph{#1}} % [article,book,inbook,incollection,inproceedings,misc,patent,techreport,thesis,unpublished]
@@ -59,7 +59,7 @@
 			{\iffieldundef{shorttitle}%
 				{\printtext[parens]{\usebibmacro{cite:labeldate+extradate}}\addcolon\addspace\printtext{\printfield[emph]{title}}}%
 				{\printtext[parens]{\usebibmacro{cite:labeldate+extradate}}\addcolon\addspace\printtext{\printfield[emph]{shorttitle}}}%labeldate+extradate
-	}}}%
+			}}}%
 	{\usebibmacro{cite:shorthand}}%
 }
 
@@ -108,3 +108,5 @@
 \DefineBibliographyStrings{german}{
 	andothers = {{et\,al\adddot}}, bibliography = {Literaturverzeichnis}, mathesis = {Diplomarbeit}, phdthesis = {Dissertation}, techreport = {Technischer Bericht}, resreport = {Forschungsbericht}, edition = {Auflage}, volume = {Band}, jourvol = {Vol.},
 }
+
+% ############### OWN COMMANDS #####################

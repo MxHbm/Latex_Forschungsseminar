@@ -16,29 +16,30 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{longtable}
+\usepackage{xparse} % for \NewDocumentCommand
 
 %################ Notwendige Pakete laden #######################
 
 
-\usepackage[bibencoding=auto,citestyle=authoryear-ibid,bibstyle=authoryear,maxcitenames=1,maxbibnames=10, backend = biber]{biblatex}% Vergessen Sie nicht in den Optionen das Bibliographieprogramm auf "biber" umzustellen! Um die Vorlage mit BibTeX nutzen zu können, muss die Option "backend=bibtex" übergeben werden. Es ist jedoch biber zu empfehlen, beachten Sie dazu die Hinweise der biblatex-Paketdokumentation im Abschnitt 3.15 "Using the fallback BibtTeX backend".
+\usepackage[bibencoding=auto,citestyle=authoryear-ibid,bibstyle=authoryear,maxcitenames=3,maxbibnames=10, backend = biber]{biblatex}% Vergessen Sie nicht in den Optionen das Bibliographieprogramm auf "biber" umzustellen! Um die Vorlage mit BibTeX nutzen zu können, muss die Option "backend=bibtex" übergeben werden. Es ist jedoch biber zu empfehlen, beachten Sie dazu die Hinweise der biblatex-Paketdokumentation im Abschnitt 3.15 "Using the fallback BibtTeX backend".
 \usepackage{settings/BiblatexSetup}
 
 \AfterPackage*{biblatex}%
 {
-	\RequirePackage[breaklinks=true, colorlinks=false, linktoc=section, linkcolor=blue, citecolor=black, hidelinks]{hyperref}
-	% Da hyperref allerhand Veränderungen an vielen Standardbefehlen vornimmt, sollte dieses als letztes in der Präambel eingebunden werden. Nur Pakete, bei denen in der Dokumentation explizit darauf hingewiesen wird, dass diese nach hyperref zu laden sind, sollten auch danach folgen.
-	\hypersetup{pdfprintscaling=None} % gleiches Verhalten, auch ohne hyperref, liefert: \pdfcatalog{/ViewerPreferences<</PrintScaling/None>>}
-	\usepackage{footnote} % https://tex.stackexchange.com/questions/207192/footcite-in-float-caption
-	\makesavenoteenv{figure}
-	\makesavenoteenv{table}
-	\makesavenoteenv{algorithm}
+    \RequirePackage[breaklinks=true, colorlinks=false, linktoc=section, linkcolor=blue, citecolor=black, hidelinks]{hyperref}
+    % Da hyperref allerhand Veränderungen an vielen Standardbefehlen vornimmt, sollte dieses als letztes in der Präambel eingebunden werden. Nur Pakete, bei denen in der Dokumentation explizit darauf hingewiesen wird, dass diese nach hyperref zu laden sind, sollten auch danach folgen.
+    \hypersetup{pdfprintscaling=None} % gleiches Verhalten, auch ohne hyperref, liefert: \pdfcatalog{/ViewerPreferences<</PrintScaling/None>>}
+    \usepackage{footnote} % https://tex.stackexchange.com/questions/207192/footcite-in-float-caption
+    \makesavenoteenv{figure}
+    \makesavenoteenv{table}
+    \makesavenoteenv{algorithm}
 }
 
 
 \AfterPackage*{hyperref}
 {
-	\RequirePackage[automake,acronym,symbols,nomain,translate=babel,]{glossaries}
-	\usepackage{settings/GlossariesSetup}
+    \RequirePackage[automake,acronym,symbols,nomain,translate=babel,]{glossaries}
+    \usepackage{settings/GlossariesSetup}
 }
 %############## Own commands #####################´
 \newcommand{\parbreak}{\vspace{\baselineskip}\noindent}
