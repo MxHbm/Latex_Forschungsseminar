@@ -1,5 +1,6 @@
 \begin{figure}[htbp]
     \centering
+    \small
     % First TikZ picture
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
@@ -8,14 +9,17 @@
             \draw[thick] (0,0) rectangle (5,3);
 
             % Draw the three items inside
-            \draw[fill=blue!20] (3,0) rectangle (5,0.75);
-            \node at (4, 0.5) {};
+            \draw[fill=blue!20] (3,0) rectangle (5,0.6);
+            \node at (4, 0.3) {};
 
-            \draw[fill=green!20] (3,0.75) rectangle (5,1.5);
-            \node at (4, 1.125) {Fragile};
+            \draw[fill=blue!20] (3,0.6) rectangle (5,1.2);
+            \node at (4, 0.9) {};
 
-            \draw[fill=green!20] (3,1.5) rectangle (5, 2.25);
-            \node at (4, 1.875) {Fragile};
+            \draw[fill=green!20] (3,1.2) rectangle (5, 1.8);
+            \node at (4, 1.5) {Fragile};
+
+            \draw[fill=green!20] (3,1.8) rectangle (5, 2.4);
+            \node at (4, 2.1) {Fragile};
 
         \end{tikzpicture}
         \caption{Feasible stacking of items}
@@ -39,7 +43,6 @@
         \end{tikzpicture}
         \caption{Infeasible stacking of items}
     \end{subfigure}
-    \caption[Visualization fragile stacking]{Comparison fragile stacking \footnotemark}
-    \footnotetext{Own figure}
+    \caption[Visualization of fragility constraint]{Comparison of fragile stacking (side view)}
     \label{fig:stacking_comparison}
 \end{figure}
