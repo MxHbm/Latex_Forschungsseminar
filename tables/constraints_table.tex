@@ -1,17 +1,30 @@
-\begin{table}[h]
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % left-aligned
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}   % centered
+\begin{table}[ht]
     \centering
     \small
-    \begin{tabular}{@{}lp{0.8\textwidth}@{}}
+    \renewcommand{\arraystretch}{1.2}
+    \setlength{\tabcolsep}{6pt}
+    \begin{tabular}{@{}L{3cm} L{3cm} C{1.2cm} C{1.2cm} C{1.2cm} C{1.2cm} C{1.2cm}@{}}
         \toprule
-        \textbf{Dataset} & \textbf{Constraints}                                                                                                     \\
+        \textbf{Category}                   & \textbf{Constraint} & \rotatebox{90}{Gendreau, 2006} & \rotatebox{90}{Moura, 2009} & \rotatebox{90}{Ceschia, 2013} & \rotatebox{90}{Krebs, 2021a} & \rotatebox{90}{Krebs, 2021b} \\
         \midrule
-        Gendreau, 2006   & Rotation, Support, Fragility, LIFO, Sequence                                                                             \\
-        Moura, 2009      & TW, LIFO Unloading, Orientation, Cargo stability                                                                         \\
-        Ceschia, 2013    & \textit{Load Bearing Strength}, Vertical orientation, \textit{Robust Stability}, \textit{Reachability}                   \\
-        Krebs, 2021a     & Vertical orientation, Load-bearing strength, Robust stability, Reachability, Axle weights, balanced loading, manual LIFO \\
-        Krebs, 2021b     & Vertical orientation, Axle weights, Fragility, Minimal supporting area, LIFO                                             \\
+        \multirow{2}{*}{Orientation}        & Full Rotation       &                                & $\bullet$                   &                               &                              &                              \\
+                                            & Vertical Rotation   & $\bullet$                      &                             & $\bullet$                     & $\bullet$                    & $\bullet$                    \\\midrule
+        \multirow{3}{*}{Vertical Stability} & Fragility           & $\bullet$                      &                             & $\bullet$                     & $\bullet$                    & $\bullet$                    \\
+                                            & Support Area        & $\bullet$                      & $\bullet$                   & $\bullet$                     & $\bullet$                    & $\bullet$                    \\
+                                            & LB Strength         &                                &                             &                               & $\bullet$                    &                              \\\midrule
+        \multirow{3}{*}{Stability}          & Balanced Loading    &                                &                             & $\bullet$                     & $\bullet$                    &                              \\
+                                            & Axle Weights        &                                &                             &                               & $\bullet$                    & $\bullet$                    \\
+                                            & Robust Stability    &                                &                             & $\bullet$                     & $\bullet$                    &                              \\\midrule
+        \multirow{5}{*}{Unloading}          & Reachability        &                                &                             & $\bullet$                     & $\bullet$                    &                              \\
+                                            & Sequence            & $\bullet$                      &                             &                               & $\bullet$                    &                              \\
+                                            & Time Windows        &                                & $\bullet$                   &                               & $\bullet$                    &                              \\
+                                            & LIFO                & $\bullet$                      & $\bullet$                   & $\bullet$                     & $\bullet$                    & $\bullet$                    \\
+                                            & MLIFO               &                                &                             & $\bullet$                     & $\bullet$                    &                              \\
         \bottomrule
     \end{tabular}
-    \caption{Overview of considered constraints of published datasets.}
-    \label{tab:constraints_cvrp_instances}
+    \caption{Matrix overview of constraints covered in selected CVRP datasets. A bullet ($\bullet$) indicates that the constraint is considered in the respective dataset.}
+    \label{tab:constraint_matrix}
 \end{table}

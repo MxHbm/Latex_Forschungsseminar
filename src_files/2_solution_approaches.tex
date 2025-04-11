@@ -4,11 +4,11 @@ The \gls{CLP} with muli-dimensions is a NP-hard combinatorial problem \footcite[
 As a consequence, heuristics and metaheuristics were the dominating tools
 in the early stages of this research field  \footcite[cf.][]{pisinger_heuristics_2002}.
 However, the number of papers studying exact solution methods and their solution quality
-for the \gls{2D} \gls{CLP} has significantly increased in the recent years \footcite[cf.][p.23]{iori_exact_2021}.
+for the\gls{CLP} has significantly increased in the recent years \footcite[cf.][p.23]{iori_exact_2021}.
 In the remainder of this seminar, the focus will be restricted to the three-dimensional \gls{CLP},
 which poses additional complexity and remains less explored in the literature.
 \citeauthor{zhao_comparative_2016} conducted a comprehensive review of the solution methods
-for the \gls{3D} \gls{CLP} based on the overview from \citeauthor{bortfeldt_constraints_2013}.
+for the \gls{CLP} based on the overview from \citeauthor{bortfeldt_constraints_2013}.
 The following figure \ref{fig:solution_methods_overview} presents a limited overview of
 selected solution methods, divided in three categories constructive heuristics, metaheuristics
 and exact methods. A fourth category, hybrid methods, is not explicitly shown in the figure, as it combines different
@@ -21,7 +21,7 @@ These categories will now be explained more in detail.
 \subsubsection{Constructive Heuristics}
 Depending on the heterogeneity of the items, two primary strategies are commonly used to
 obtain an initial feasible solution. In cases where the items are weakly homogeneous,
-the problem's dimensionality is reduced from \gls{3D} to \gls{2D} by constructing either
+the problem's dimensionality is reduced from 3D to 2D by constructing either
 \textbf{walls} or \textbf{layers} of similarly sized items. These structures fill one
 dimension of the container—typically either length and height or width and length, thereby
 simplifying the remaining problem space. Moreover, when these layers or walls are of
@@ -45,7 +45,7 @@ or by improving the quality of the permutation of all items.
 the idea of iteratively improving a solution by exploring its neighborhood and simultaneously
 storing certain moves or complete solutions in a tabu list to avoid cycling back to
 previous solutions, feasible or infeasible ones. \gls{SA} has rarely been used as a
-standalone metaheuristic in the context of \gls{3D} \gls{CLP}. Instead, it is often combine
+standalone metaheuristic in the context of \gls{CLP}. Instead, it is often combine
 with other approaches to leverage its cooling schedule, which allows the acceptance of
 worse solutions at higher temperatures. This helps the algorithm to escape local optima
 early in the search and gradually transition into a more focused intensification phase as
