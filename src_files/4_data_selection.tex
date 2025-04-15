@@ -1,30 +1,12 @@
 \chapter{Comparison of Available Datasets}
 \label{sec:dataset_selection}
 
-The previous chapter~\ref{sec:motivation_feasibility_prediction} shows, that
-the training of a classifier is demanding and the usage needs to be levaraged to reach a promising
-cost-benefit ratio. A well-fitting application is the prediction of the feasibility of
-packing a given set of cuboids into a container - representing a single tour of the \gls{3L-CVRP} - similar to the approach
-presented in Chapter~\ref{sec:motivation_feasibility_prediction} by \citeauthor*{zhang_learning-based_2022}\footcite[cf.][]{zhang_learning-based_2022}.
-Many routes need to be evaluated in the \gls{3L-CVRP} to find the set of routes, which minimizes the
-total travelled distance by all vehicles. The packing of the requested items does not need to
-fulfil any optimization criteria, but only needs to be feasible and to consider introduced \gls{CLP} constraints\footcite[cf.][]{tamke_branch-and-cut_2024}.
-As discussed in Chapter~\ref{sec:classical_solution_approaches}, the \gls{CLP} is an NP-hard problem,
-making it computationally demanding to verify the packing feasibility of individual routes.
-A classifier can therefore enhance the performance of existing algorithms by accelerating the speed
-of checking single routes for feasibility. The exact packing solution is computed only when a final
-solution is found, or just before columns generated in Branch-and-Price or Branch-and-Cut algorithms
-are discarded. This use case has the potential to significantly reduce the overall computation time. \footcite[cf.][pp. 9--11]{zhang_learning-based_2022}.
 The \gls{3L-CVRP} is a well-studied problem and several datasets were published in the past, considering
 different constraints and characteristics. A selection of these datasets will be compared and evaluated
 in this chapter. The goal is to identify a suitable dataset for training a general \gls{CLP} classifier that can predict
 the feasibility of packing items into a container of different datasets. Therefore, the dataset needs
 to have heterogeneous characterists to represent numerous possible use-cases
-as shown in Chapter~\ref{sec:motivation_feasibility_prediction}.
-
-\parbreak
-
-Five published \cgls{3L-CVRP} datasets are presented with respect to their overall characteristics.
+as shown in Chapter~\ref{sec:motivation_feasibility_prediction}. Five published \cgls{3L-CVRP} datasets are presented with respect to their overall characteristics.
 Each dataset gets an unique identfier to simplilfy the comparison and is shown in parenthesis
 after the fwollowing individual introduction. The first \cgls{3L-CVRP} dataset was published by \citeauthor*{gendreau_tabu_2006} in
 \citeyear{gendreau_tabu_2006} and delivered the first \cgls{3L-CVRP} instances containing huge and heavy items (\gendreauDataSet)\footcite[cf.][]{gendreau_tabu_2006}.
