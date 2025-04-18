@@ -5,7 +5,7 @@ The \gls{3L-CVRP} is a well-studied problem and several datasets were published 
 different constraints and characteristics. A selection of these datasets will be compared and evaluated
 in this chapter. The goal is to identify a suitable dataset for training a general \gls{CLP} classifier that can predict
 the feasibility of packing items into a container of different datasets. Therefore, the dataset needs
-to have heterogeneous characterists to represent numerous possible use-cases
+heterogeneous characterists to represent numerous possible use-cases
 as shown in Chapter~\ref{sec:motivation_feasibility_prediction}. Five published \cgls{3L-CVRP} datasets are presented with respect to their overall characteristics.
 Each dataset gets an unique identfier to simplilfy the comparison and is shown in parenthesis
 after the fwollowing individual introduction. The first \cgls{3L-CVRP} dataset was published by \citeauthor*{gendreau_tabu_2006} in
@@ -22,28 +22,23 @@ of realistic constraints and offers a wide range of instance sizes (\krebsADataS
 The second one focuses on semi-trailer trucks and special requirements for axle weights (\krebsBDataSet)\footcite[cf.][]{krebs_axle_2021}.
 The characteristics of the datasets are summarized in the following Table~\ref{tab:dataset_comparison},
 where the brackets [\,] indicate a range of possible values and the braces $\{\,\}$ symbolizes tuples of geometric dimensions.
-Here, \textit{relative} relates to the the ratio of item properties to the vehicle capacity or dimensions,
+Here, \textit{relative} relates to the ratio of item properties to the vehicle capacity or dimensions,
 and a \textit{item type} is defined by its geometrical dimensions, the weight, and possible stability characteristics, such as fragility.
 When the number of item types is smaller than the number of items, items with equal type occur multiple times.
 
 \input{tables/instance_comparison.tex}
 
-The \gendreauDataSetText dataset contains the relative heaviest items, whereas the other datasets with the exception of
-\krebsADataSetText contains lightweight items. The quanitity of ordered items per customer differs the most between
-the \gendreauDataSetText and the \mouraDataSetText datasets, and represents the most lowest and the highest values
-respectively.
-
 The most important consideration, when selecting a suitable dataset for the training of a classifier,
 is how representative single tours from one dataset are for all other datasets. Therefore, the numeric characteristics
-should not contain outliers. The \gendreauDataSetText dataset has the most extreme values for the relative mass, volume of items (min Dimension),
+should not contain outliers. The \gendreauDataSetText dataset has the most extreme values for the relative mass, minimum dimension of items,
 and the quantity of items per customers. The \mouraDataSetText dataset includes the highest number of lighweight items per customer,
 which can not represent the other datasets. The \ceschiaDataSetText contains instances with the most items and the greatest range
 of item dimensions, but the relative mass per item is very low. The datasets from \citeauthor*{krebs_advanced_2021}
-reflect the most average characteristics, but the mass of the \krebsBDataSetText items are very low, and the \krebsADataSetText
-has the best numeric profile. The following Table~\ref{tab:constraint_matrix} provides an overview of the constraints considered
+reflect average characteristics, and the \krebsADataSetText has the best overall profile, as the mass of the \krebsBDataSetText items are very low.
+The following Table~\ref{tab:constraint_matrix} provides an overview of the constraints considered
 in each dataset showcasing the realistic profile. The constraints are categorized in the five groups introduced
 in Chapter~\ref{sec:clp_definition}.
-
+\clearpage
 \input{tables/constraints_table.tex}
 
 This comparison shows that all datasets include similar types of constraints, but the level
@@ -53,14 +48,13 @@ basic ones like support area, \gls{LIFO}, and fragility. To further investigate 
 between the datasets, Figure~\ref{fig:dataset_comparison} visualizes the relative mass and
 volume of all items requested by individual customers. This representation reflects the
 unconstrained \gls{LB} on vehicle usage. Additionally, the size of each scatter point indicates
-the total number of items requested. For example, the Moura dataset includes 46 instances with 25
-customers each, resulting in aggregated demand data from $25 \cdot 46 = 1150$ customers shown in
-the plot.
+the total number of items requested. For example, the \mouraDataSetText dataset includes 46 instances with 25
+customers each, resulting in $25 \cdot 46 = 1150$ dots in the plot.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{pictures/comparison_datasets_3lcvrp.png}
-    \caption{Comparison of 3L-CVRP/ 3L-VRPTW datasets.}.
+    \includegraphics[width=0.85\textwidth]{pictures/comparison_datasets_3lcvrp.png}
+    \caption{Comparison aggregated customer demands of different 3L--CVRP/ 3L--VRPTW datasets.}.
     \label{fig:dataset_comparison}
 \end{figure}
 
@@ -74,11 +68,11 @@ is selected as the most suitable and the properties of this dataset will be furt
 The dataset \krebsADataSetText contains 18 different instance types resulting from the combinations
 of number of customers, item tyes and items. The following Figure~\ref{fig:krebs_dataset_analysis_detailes} plots
 the relative mass and volume of all items requested by individual customers for each of the 18 instances.
-\clearpage
+
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.9\textwidth]{pictures/krebs_instances_detailed.png}
-    \caption[Visualization of different instances of Krebs et al. (2021) dataset.]{Visualization of different instances of Krebs\_a dataset.}.
+    \includegraphics[width=0.85\textwidth]{pictures/krebs_instances_detailed.png}
+    \caption[Visualization of different instances of \textcite{krebs_advanced_2021} dataset.]{Visualization of different instances of \krebsADataSetText dataset.}.
     \label{fig:krebs_dataset_analysis_detailes}
 \end{figure}
 
@@ -96,3 +90,10 @@ as a consequence poor classifying results with a low accuracy.
 %\section{Evaluation Criteria: Diversity, Realism, Labeling, Size}
 %\section{Comparison of Selected Datasets}
 %\section{Justification for Dataset Selection}
+
+\begin{comment}
+The \gendreauDataSetText dataset contains the relative heaviest items, whereas the other datasets with the exception of
+\krebsADataSetText contains lightweight items. The quanitity of ordered items per customer differs the most between
+the \gendreauDataSetText and the \mouraDataSetText datasets, and represents the most lowest and the highest values
+respectively.
+\end{comment}

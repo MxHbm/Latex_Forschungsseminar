@@ -1,6 +1,18 @@
 \chapter{Conclusion and Outlook}
 \label{sec:conclusion}
-Bei andwendungsfäälen in denen das CLp ift aufegrufen wird, damit aurfure reduziett wird
-\section{Summary of Key Insights}
-\section{Practical Implications}
-\section{Future Work and Research Directions}
+
+The variety of \gls{CLP} applications in logistics is wide, and the integration of \gls{CLP} in
+\gls{VRP} algorithms is a daily practical use case. However as shown in the chapters are these problems
+NP-hard and it is computationally expensive to find optimal solutions. The usage of \gls{ML} classifiers
+can improve the solution quality and computation time. However, is tot complex top train a calssier, which
+is able to label the \gls{3L-CVRP} with practical constraints as features to train the classifer need
+to represent the numerical values. A good starting point is the dataset \krebsADataSetText, which includes
+many different measurements and constraints to be used in a classifier. To train a \gls{3L-CVRP} classifier
+with practical constraints, the following further steps need to be conducted. A train dataset needs to be created,
+which exists of single tours labeled as infeasible or feasible beforehand with an exact \gls{CP} approach.
+Afterwards in many iterations and epochs the features needed to predcit the label with a high accuracy need to be
+evaluated and it can be checked, hwo challenging each single constraint is to include as feature. When
+the accuracy reaches a satisfying level, the classifer can be implemented in a overall \gls{3L-CVRP} algorithm.
+The classifer cna be used to predict the feasibiltiy and the algoritms with and without the classifier. Afterwards
+more instances can be tested with the classifier to see, if also other problem instances presented in Chapter 5
+can be succesfully predicted with the classifier and consequently benchmarks for these datasets can be created created.

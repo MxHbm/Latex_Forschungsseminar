@@ -6,16 +6,15 @@ analyzed, which use predictive methods to accelerate the computation time. Befor
 a short introduction to classifiers will be conducted. It is important to note that
 several machine learning approaches feature
 online \gls{BPP}, where the best placement of single items, consecutively available,
-needs to be found, instead of finding one overall placement for all items at once
-(Offline) \footcite[cf.][p. 1]{ali_-line_2022}. As this work focuses on offline
+needs to be found, instead of finding one overall placement for all items at once\footcite[cf.][p. 1]{ali_-line_2022}. As this work focuses on offline
 \gls{BPP}, the online approaches are not further considered, and the focus is laying
 primarily on \gls{ML} classifiers. These are supervised \gls{ML} algorithms used to predict the
-value of a categorical or binary output column (also known as the label) based on the
+value of a categorical or binary output column, called label, based on the
 values of other columns, called features. Classifiers learn from a labeled dataset,
 where the correct output values are known in advance, and then use this knowledge to
 make predictions on new, unseen data. The accuracy can be evaluated afterwards by comparing
 the predicted labels with the actual labels \footcite[cf.][]{kotsiantis_supervised_2007}.
-A exemplary training dataset is shown in table \ref{tab:classifier_label_data}.
+An exemplary train dataset is shown in table \ref{tab:classifier_label_data}.
 
 \input{tables/label_classifier}
 
@@ -28,10 +27,9 @@ and the corresponding labels. If the features are poorly chosen, the model may f
 to capture the underlying patterns in the data. Additionally, if the training set
 is too small, the model might not generalize well, ultimately lacking the ability
 to accurately predict unseen data. Furthermore, it needs to be noted, that available
-\gls{ML} classifier are by nature not superior to others, but can significantly outperform
+\gls{ML} models are not by nature superior to others, but can significantly outperform
 others on specific application problem \footcite[cf.][pp. 250, 264]{kotsiantis_supervised_2007}.
-As the \gls{CLP} is a NP-hard problem, it is interesting to evaluate the usage of classifiers
-to complement exisiting algorithm.
+The usage of classifiers is promising to complement exisiting algorithms, as shown in the following.
 
 \subsubsection{Feasibility Classifier of the \cgls{2L-CVRP}}
 A practical application of the \gls{CLP} is the integration in the \gls{VRP}, where
@@ -39,16 +37,15 @@ a number of customers need to be served with a set of items by a fleet of vehicl
 to start from a depot and return. The goal is to minimize the total distance driven
 by the vehicles. When considering multidimensional items, the NP-hard problem itself,
 increases in complexity, as every tour is representing a \gls{CLP} itself \footcite[cf.][pp. 1--2]{tamke_branch-and-cut_2024}.
-In order to reduce the computational effort of checking the feasibility of the \gls{CLP}
-of single tours, \citeauthor*{zhang_learning-based_2022} trained a \gls{ANN} binary classifier
-predicting the feasibility of single tours. Before single tours are either discarded or accepted
-as new solutions, the loading is checked with an exact algorithm. As many single tours need to be evaluated,
-this classifier helped significantly to reduce the computation time of the \gls{CLP} and had
-an accuracy of at most $94.1\%$. However, some simplifications were made, they focused only
-on the ground area of the items tackling the \cgls{2L-CVRP} and no further constraints,
-as unloading, rotation, or fragility (see Chapter~\ref{sec:clp_definition}) were considered.
+\citeauthor*{zhang_learning-based_2022} used a binary classifier to predict the feasibility of the
+loading of single tours to reduce the overall computation time in their exact Branch\&Price
+algorithm. As many single tours need to be evaluated, the \gls{ANN} model reduced the need
+to control the results only when solutions are either discarded or accepted. The classifier
+performed well and had an accuracy of at most $94.1\%$. However, some simplifications were made,
+they allowed no stacking of items tackling the \cgls{2L-CVRP} and no further constraints,
+as unloading sequence, rotation or stability (see Chapter~\ref{sec:clp_definition}) were considered.
 The classifier was trained with a dataset of $50.000$ tours obtained by the Column Generation
-algorithm of the \cgls{2L-CVRP} containing 17 hand-crafted features capturing geometric
+algorithm containing 17 hand-crafted features capturing geometric
 and spatial characteristics of the packing problem. These include the ratio of the total item area
 to the container floor area, as well as the mean, standard deviation, minimum, and maximum of
 the following four indicators:
@@ -61,9 +58,9 @@ the following four indicators:
 The \gls{ANN} model was trained in many epochs
 using the \textit{Mini-Batch Gradient Descent Algorithm}. By integrating the classifier into the
 exisiting Branch\&Price algorithm, the CPU time was reduced by $54.12\%$ and the frequency of
-calling the exact feasibility checker by $87.22\%$. However, the objective values are not significantly
+calling the exact feasibility checker by $87.22\%$ on average. However, the objective values are not significantly
 lower and the authors assume that the prediction accuracy does not influence the solution quality
-to a high extent, as the objectve values obtained by the \gls{LR} model are indifferent \footcite[cf.][pp. 4, 9--15]{zhang_learning-based_2022}
+to a high extent, as the objectve values obtained by the \gls{LR} model are similar \footcite[cf.][pp. 4, 9--15]{zhang_learning-based_2022}
 
 \subsubsection{Pallet Size Classifier for the \gls{PLP}}
 Another use case for \gls{ML} in packing problems is presented by \citeauthor*{aylak_application_2021},
@@ -72,7 +69,7 @@ need to be placed on paletts with fixed weight, length and height dimensions, op
 generating subsequently stability and minimizing the number of pallets needed. Based on real-life data
 three candidate pallet sizes were considered and the best packing pattern must be found for each box
 configuration. Therefore, multiple packing heuristics were applied to
-generate feasible packing patterns and identify the best-performing size. These could be used as labels for several
+generate feasible packing patterns and identify the best-performing. These are used as labels for several
 \gls{ML} models, which were trained to predict the optimal pallet size based on four input features: the box
 dimensions \{x,y,z\} and the demand quantity. Compared to the purely heuristic approach, the classifier-based
 selection achieved a volume utilization improvement of $6.7\%$ and significantly reduced computation time.
@@ -80,21 +77,27 @@ However, the study did not consider additional constraints such as weight limits
 
 \parbreak
 
-These two examples show that classifiers can be succesfully integrated in exisiting \gls{CLP}
-algorithms to reduce the computation time and the overall complexity, when the classifying model
-is well trained. However, the training of a classifier is a time-consuming process and the
-practicability of trainig and integrating a classifier needs to be evaluated in every single
-case thorougly. As both examples had few constraints the classifier could be trained with a quite
-small number of features. The training of a classifier is demanding and the usage needs to be levaraged to reach a promising
-cost-benefit ratio. A well-fitting application is the prediction of the feasibility of
-packing a given set of cuboids into a container - representing a single tour of the \gls{3L-CVRP} - similar to the approach
-presented in Chapter~\ref{sec:motivation_feasibility_prediction} by \citeauthor*{zhang_learning-based_2022}\footcite[cf.][]{zhang_learning-based_2022}.
-Many routes need to be evaluated in the \gls{3L-CVRP} to find the set of routes, which minimizes the
-total travelled distance by all vehicles. The packing of the requested items does not need to
-fulfil any optimization criteria, but only needs to be feasible and to consider introduced \gls{CLP} constraints\footcite[cf.][]{tamke_branch-and-cut_2024}.
-As discussed in Chapter~\ref{sec:classical_solution_approaches}, the \gls{CLP} is an NP-hard problem,
-making it computationally demanding to verify the packing feasibility of individual routes.
-A classifier can therefore enhance the performance of existing algorithms by accelerating the speed
-of checking single routes for feasibility. The exact packing solution is computed only when a final
-solution is found, or just before columns generated in Branch-and-Price or Branch-and-Cut algorithms
-are discarded. This use case has the potential to significantly reduce the overall computation time. \footcite[cf.][pp. 9--11]{zhang_learning-based_2022}.
+These two examples demonstrate that classifiers can be successfully integrated into existing \gls{CLP}
+algorithms to reduce computation time and overall complexity, provided the classifier is well trained.
+However, training such a model is often time-consuming, and the practicality of both training and
+integrating a classifier must be carefully evaluated on a case-by-case basis.
+In the two examples presented, the number of constraints was relatively small, allowing the classifier
+to be trained with a limited set of features. When more complex constraints are introduced, such as
+\gls{LIFO} unloading rules or item fragility, the construction of numerical features that accurately
+represent these constraints becomes significantly more challenging.
+Moreover, results achieved by simple classifiers often lack practical relevance, since real-world
+scenarios, such as loading large containers or trucks, inevitably involve multiple constraints that
+must be taken into account. Therefore, the development of a classifier is not only demanding but also
+must be weighed carefully to ensure a favorable cost-benefit ratio.
+A particularly promising and practically relevant application is the prediction of feasible tours for the
+\gls{3L-CVRP} with constraints, an extension of the \gls{2L-CVRP} example discussed earlier. In the
+\gls{3L-CVRP}, a large number of routes must be evaluated to identify those that minimize the total
+distance traveled by all vehicles. While the packing of requested items does not need to satisfy
+optimization criteria, it must still be feasible under the given \gls{CLP} constraints\footcite[cf.][]{tamke_branch-and-cut_2024}.
+As discussed in Chapter~\ref{sec:classical_solution_approaches}, \gls{CLP} the verification of
+packing feasibility for each individual route is computationally expensive.
+Here, classifiers can significantly boost performance of algoroithms by rapidly evaluating route feasibility. The
+exact packing solution is then computed only for the final solution candidates or before a potentially
+feasible solution is discarded, to avoid incorrect eliminations.
+To support this approach, several published \gls{3L-CVRP} datasets will be compared to identify the most
+suitable one for training a binary feasibility classifier.
