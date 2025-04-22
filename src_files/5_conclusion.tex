@@ -1,18 +1,38 @@
 \chapter{Conclusion and Outlook}
 \label{sec:conclusion}
-
-The variety of \gls{CLP} applications in logistics is wide, and the integration of \gls{CLP} in
-\gls{VRP} algorithms is a daily practical use case. However as shown in the chapters are these problems
-NP-hard and it is computationally expensive to find optimal solutions. The usage of \gls{ML} classifiers
-can improve the solution quality and computation time. However, is tot complex top train a calssier, which
-is able to label the \gls{3L-CVRP} with practical constraints as features to train the classifer need
-to represent the numerical values. A good starting point is the dataset \krebsADataSetText, which includes
-many different measurements and constraints to be used in a classifier. To train a \gls{3L-CVRP} classifier
-with practical constraints, the following further steps need to be conducted. A train dataset needs to be created,
-which exists of single tours labeled as infeasible or feasible beforehand with an exact \gls{CP} approach.
-Afterwards in many iterations and epochs the features needed to predcit the label with a high accuracy need to be
-evaluated and it can be checked, hwo challenging each single constraint is to include as feature. When
-the accuracy reaches a satisfying level, the classifer can be implemented in a overall \gls{3L-CVRP} algorithm.
-The classifer cna be used to predict the feasibiltiy and the algoritms with and without the classifier. Afterwards
-more instances can be tested with the classifier to see, if also other problem instances presented in Chapter 5
-can be succesfully predicted with the classifier and consequently benchmarks for these datasets can be created created.
+\begin{comment}
+The variety of \gls{CLP} applications in logistics is wide, and the urge to consider practical constraints
+and realistic datasets is high. For practitioners, heuristics are the first choice as good solutions
+can be retrieved in satisfactory time. Exact solutions help to understand the structure of optimal solutions
+and to evalutate and enhance existing heuristics. To accelerate exact methods different \gls{ML} enhancements
+were presented and the \gls{3L-CVRP} was identified as a promising future use case for \gls{ML} classifiers.
+The importance of realistic constraints of the \gls{CLP} were higlighted and the challenges faced when
+training the classifier with such constraints were discussed. A dataset from \citeauthor*{krebs_advanced_2021} was identified
+was selected for future training of a classifier. To train a \gls{3L-CVRP} classifier that incorporates practical constraints, several next steps are
+required. First, a training dataset must be created, consisting of individual tours that are pre-labeled
+as feasible or infeasible using an exact \gls{CP} approach. In subsequent training iterations and epochs,
+relevant features for accurately predicting feasibility must be evaluated. This includes assessing how
+challenging it is to encode each individual constraint as a feature. Once the classifier achieves a
+satisfactory level of accuracy, it can be integrated into a complete \gls{3L-CVRP} algorithm. The
+classifier will then be used to predict the feasibility of solutions, enabling a comparison between
+algorithmic performance with and without the classifier. Finally, the model can be tested on additional
+problem instances—such as those introduced in Chapter 5—to evaluate its generalization capabilities.
+This will allow the creation of meaningful benchmarks across multiple datasets.
+\end{comment}
+The wide range of \gls{CLP} applications in logistics underscores the growing need to incorporate practical
+constraints and realistic datasets. While heuristics remain the preferred choice for practitioners due to
+their efficiency in producing good solutions within acceptable time frames, exact methods play a crucial
+role in understanding the structure of optimal solutions and benchmarking heuristics.
+To enhance exact approaches, various \gls{ML}-based examples have been presented, and the \gls{3L-CVRP}
+has emerged as a promising candidate for the application of machine learning classifiers. This work
+emphasized the importance of realistic constraints within the \gls{CLP} context and explored the challenges
+of training classifiers under such conditions. A dataset from \citeauthor*{krebs_advanced_2021} was
+identified as a suitable foundation for developing a classifier. The next steps involve creating a labeled
+training dataset, where individual tours are classified as feasible or infeasible using an exact \gls{CP}
+method. Through iterative training and feature evaluation, the goal is to determine which constraints can
+be effectively represented and how they impact classification performance. Once a satisfactory level of
+accuracy is achieved, the classifier can be integrated into a full \gls{3L-CVRP} algorithm to predict
+feasibility and improve decision-making. Finally, the classifier will be tested on additional problem
+instances—such as those presented in Chapter 5—to assess its generalizability. This will support the
+development of meaningful benchmarks across diverse datasets and contribute to the advancement of
+constraint-aware learning in combinatorial logistics problems.

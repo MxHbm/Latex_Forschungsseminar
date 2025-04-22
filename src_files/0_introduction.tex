@@ -1,44 +1,26 @@
 \chapter{Introduction}
 \label{sec:introduction}
-Transporting goods has become a major task in a globalized world, with parcel shipping alone covering
-$161$ billion parcels in 2022, resulting in over $5000$ parcels delivered per second \footcite[cf.][]{noauthor_parcel_nodate}.
-These staggering numbers are only manageable through a strong logistics network that efficiently ships
-items from companies to single customers, meeting their needs. Beyond parcels, maritime transport
-handles $80\%$ of global trade, where uniform containers are packed with differently shaped cargo with
-individual requirements \footcite[cf.][]{united_nations_trade_and_development_review_2024}.
-A central challenge faced in this domain is the
-efficient arrangement of items of various shapes and sizes. Given the vast scale of logistics, even small inefficiencies become costly. Thus, there is strong
-interest in optimizing space and minimizing container use.
-This \gls{CLP} has  broad range of applications occuring in many real-world scenarios,
-such as loading cargo, as well as optimizing warehouse storage and
-packing of smaller goods into pallets or cardboard boxes\footcite[cf.][p.1]{bortfeldt_constraints_2013}.
-Even though, cargo is transported one a huge scale by maritime super ships. There is a huge need of transporting
-single items and delivieries with trucks to the demanding companies and individuals for the last mile,
-covering the urge to find best possible routes to load vehicles efficiently and including as many as customers
-as possible. The task for finding cost efficient route with integrated loading is called is a special interesta
-area of research, developing efficient heuristics for finding practical good solutions. However, especially
-in the field of \gls{3L-CVRP}, exact solution methods are scarcly found due to the NP-hardness of the problem
-and the complex  computationally expensive, especially for large, constraint-rich instances
-involving orientation rules, stability, and load-bearing limits, which are crucial for practical and safe
-operations\footcite[cf.][p.377--378]{bischoff_issues_1995}. Therefore aims this paper to provide an overview
-of the \gls{CLP} and explore whether \gls{ML} techniques could support or enhance classical exact solution methods
-by leveraging the speed and the possibiltiy not to check every route.
+In today’s globalized economy, efficient logistics networks are vital for managing the vast number of
+goods transported daily. Maritime shipping, responsible for about $80\%$ of global trade,
+forms a backbone of this network \footcite[cf.][]{united_nations_trade_and_development_review_2024}.
+However, the last mile, delivering individual parcels to customers, poses some of the most complex optimization
+challenges. In 2022, over 161 billion parcels were delivered globally, equating to more than 5,000
+deliveries every second \footcite[cf.][]{noauthor_parcel_nodate}.
+These numbers are only manageable through a strong logistics network, where even small inefficiencies
+become very costly and optimization potential is huge. Two major challenges are faced in this domain, which
+is the optimization of the routes driven by the delivery trucks, the \gls{VRP}, and the efficient arrangement of items
+of various shapes and sizes, the \gls{CLP}. When the \gls{VRP} and the \gls{CLP} are solved integrated,
+solutions are on average around $7\%$ better cost-wise, but are complex to solve as
+both problems are NP-hard \footcite[cf.][p.]{cote_value_2016}. Therefore, efficient heuristics are the practical
+choice to find good solutions in a reasonable time, because exact solution methods are limited to
+small instances considering only few practical constaints, as orientation rules, stability, and load-bearing limits \footcite[cf.][p.377--378]{bischoff_issues_1995}.
+Recent research has shown that \gls{ML} techniques can be used accelerate the exact solution process of the \gls{2L-CVRP}\footcite[cf.][]{zhang_learning-based_2022}.
+Therefore this paper aims to provide an overview
+of the \gls{CLP} and explore how \gls{ML} can be used to accelerate the \gls{3L-CVRP} exact solution process.
+The paper is structured as follows:
 Chapter~\ref{sec:clp_definition} introduces the \gls{CLP} and its common constraints.
 Chapter~\ref{sec:classical_solution_approaches} outlines exact and heuristic algorithms.
 Chapter~\ref{sec:motivation_feasibility_prediction} presents recent research on integrating \gls{ML}
 models to improve solution quality and speed. Chapter~\ref{sec:dataset_selection} compares datasets
 suitable for training classifiers for the constrained \gls{3L-CVRP}. Finally, Chapter~\ref{sec:conclusion}
 summarizes insights and discusses future work in realistic feasibility prediction for the \gls{3L-CVRP}.
-
-
-\begin{comment}
-First, the \gls{CLP} and the most common
-constraints faced in practical scenarios are presented in Chapter~\ref{sec:clp_definition}. Afterwards,
-exact and heuristic solution algorithms are presented in Chapter~\ref{sec:classical_solution_approaches}.
-Then, recent research about integrating gls{ML} models in \gls{CLP} algorithms is presented in Chapter~\ref{sec:motivation_feasibility_prediction} and
-their potential to improve solution quality and computation time rapidly. Based on these findings several
-datasets are compared to each other in Chapter~\ref{sec:dataset_selection} to identify a suitable dataset
-for training a classifier for the \gls{3L-CVRP} with constraints. Finally, this paper aims to bridge this gap by examining constraint
-datasets relevant to the \gls{3L-CVRP}, thereby enabling more realistic feasibility predictions for
-future work, which is depicted in Chapter~\ref{sec:conclusion}.
-\end{comment}

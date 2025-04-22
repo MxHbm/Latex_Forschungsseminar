@@ -7,14 +7,12 @@ and their solution quality for solving the 2D \gls{CLP} developed in recent year
 The variety of 3D algorithms, especially for exact methods, is in comparion limited, as
 \citeauthor*{zhao_comparative_2016} elaborated in their survey \footcite[cf.][]{zhao_comparative_2016}.
 The following Figure~\ref{fig:solution_methods_overview} presents an overview of the solution methods
-presented in this comparative review, divided in three categories constructive heuristics, metaheuristics
+presented in the comparative review about 3D \gls{CLP}, divided in three categories constructive heuristics, metaheuristics
 and exact methods. Hybrid methods and improvement heuristics are not explicitly shown in the figure,
 as the first one combines different components from the other categories, and the second is subsidially
-integrated in metaheuristics.
+integrated in metaheuristics. The depicted solution methods are described in the following.
 
 \input{tikz/overview_solution_methods.tex}
-
-A brief overview of each category is provied below focusing on the 3D \gls{CLP}.
 
 \subsubsection{Constructive Heuristics}
 For obtaining a initial feasible solution, two primary strategies are commonly
@@ -57,21 +55,23 @@ cuboid candidates along a spectrum between completely random and full greedy cho
 As the \gls{CLP} is a NP-hard problem, retrieving optimal solutions is computationally
 challenging. The main difficulty is to represent packing patterns and the constraints
 introduced in Chapter~\ref{sec:clp_definition} in a mathematical way. Two main methods
-exist for modeling the \gls{CLP} mathematically. The first is \gls{MIP}, which can b
+exist for modeling the \gls{CLP} mathematically. The first one is \gls{MIP}, which can b
 formulated in two primary ways. One approach defines each possible packing pattern as
 a variable \footcite[cf.][pp. 29--30]{zhu_prototype_2012}. Another models
 the placement of items using discrete coordinate variables \footcite[cf.][pp. 4--8]{moura_integrated_2009}.
 Both formulations can benefit from enhancements such as Branch\&Price or Branch\&Cut
 methods, which reduce the search space and improve solution time.
 The second main approach is \gls{CP}, which offers a flexible alternative for handling
-complex packing constraints and is quite modern. \citeauthor*{iori_exact_2021} states, that
-\gls{CP} improved the results of 2D problems significantly and is a promising
-field of future research  \footcite[cf.][p. 23]{iori_exact_2021}. This methods is used, when
-complex constraints for the \gls{CLP} are considered \footcites[cf.][pp. 5--8]{kucuk_constraint_2022}[cf.][pp. 7--11]{tamke_branch-and-cut_2024}.
+complex packing constraints and is quite modern\footcites[cf.][pp. 5--8]{kucuk_constraint_2022}[cf.][pp. 7--11]{tamke_branch-and-cut_2024}. \citeauthor*{iori_exact_2021} states, that
+\gls{CP} improved the results of 2D \gls{CLP} problems significantly and is a promising
+field of future research\footcite[cf.][p. 23]{iori_exact_2021}.
+
+\parbreak
+
 In general exact methods are not capable of solving large instances with practical relevance
 in reasonable-computation time. However, they can be used to understand the structure
 of optimal solutions to provide lower bounds and guidance for the development of future
 heuristics \footcite[cf.][p.2]{tamke_branch-and-cut_2024}. A possible approach in improving
 the performance of exact algorithms could be the use of speed-ups, as \gls{ML} models, which
 help identifying quickly good solutions and thereby reducing the need for solving instances
-exact in an iterative procedure, which is further elaborated in the next chapter.
+exactly in an iterative procedure, which is further elaborated in the next chapter.
