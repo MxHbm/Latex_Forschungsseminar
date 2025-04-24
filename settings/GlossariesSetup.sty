@@ -1,6 +1,8 @@
 % Can be used with the option "makeindex" or "automake" instead of "xindy". Here, again, a reference to the guideline of Falk Hanisch (https://github.com/tud-cd/tudscr/releases -> tudscr_v2.04d.zip -> .\doc\latex\tudscr\tutorials\treatise.pdf), p. 12 -- 22 and the CTAN documentaiton of glossaries.
 
-\setupglossaries{nogroupskip,nopostdot,nonumberlist,ucmark=false,nohypertypes={acronym,symbols}}
+\setupglossaries{nogroupskip,nopostdot,nonumberlist,ucmark=false}
+% Falls keine lInks für abkpürzungen gewünscht sind, dann die Zeile auskommentieren
+%\setupglossaries{nogroupskip,nopostdot,nonumberlist,ucmark=false,nohypertypes={acronym,symbols}}
 
 % Definition von Abkürzungen die nicht im Inhaltsverzeichnis erscheinen sollen
 \newignoredglossary{abbreviation}
@@ -11,15 +13,15 @@
 \glsaddkey{unit}{\glsentrytext{\glslabel}}{\glsentryunit}{\GLsentryunit}{\glsunit}{\Glsunit}{\GLSunit}
 
 \newcommand*{\newsymb}[5][]{%
-\newglossaryentry{#2}{%
-	type=symbols,%
-	name={},%
-	description={#3},%
-	symbol={\ensuremath{#4}},%
-	unit={\si{#5}},%
-	sort={#2},%
-	#1%
-}%
+	\newglossaryentry{#2}{%
+		type=symbols,%
+		name={},%
+		description={#3},%
+		symbol={\ensuremath{#4}},%
+		unit={\si{#5}},%
+		sort={#2},%
+		#1%
+	}%
 }
 
 % Custom glossary styles
@@ -27,7 +29,7 @@
 	\renewenvironment{theglossary}%
 	{\tablehead{}\tabletail{}%
 		\begin{supertabular}{@{}lp{\glsdescwidth}p{\glspagelistwidth}@{}}}%
-		{\end{supertabular}}%
+			{\end{supertabular}}%
 	\renewcommand*{\glossaryheader}{}%
 	\renewcommand*{\glsgroupheading}[1]{}%
 	\renewcommand{\glossentry}[2]{%
@@ -41,9 +43,9 @@
 		##3\tabularnewline
 	}%
 	\ifglsnogroupskip
-	\renewcommand*{\glsgroupskip}{}%
+		\renewcommand*{\glsgroupskip}{}%
 	\else
-	\renewcommand*{\glsgroupskip}{& & \tabularnewline}%
+		\renewcommand*{\glsgroupskip}{& & \tabularnewline}%
 	\fi
 }
 
@@ -51,7 +53,7 @@
 	\setglossarystyle{long3col}% base this style on the list style
 	\renewenvironment{theglossary}{% Change the table type --> 3 columns
 		\tablehead{}\tabletail{}\begin{longtable}{ccll}}%
-		{\end{longtable}
+			{\end{longtable}
 	}%
 	%
 	\renewcommand*{\glossaryheader}{%  Change the table header
@@ -75,7 +77,7 @@
 		\setlength\LTleft{0pt}\tablehead{}\tabletail{}
 		%			\setlength\LTright{0pt}
 		\begin{longtable}{@{}lll@{}}}%
-		{\end{longtable}
+			{\end{longtable}
 	}%
 	%
 	\renewcommand*{\glossaryheader}{%  Change the table header

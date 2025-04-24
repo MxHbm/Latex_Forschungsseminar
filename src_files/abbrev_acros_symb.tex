@@ -1,33 +1,33 @@
-\makeglossaries % Glossar, Abkürzungsverzeichnis und Symbolverzeichnis erstellen
 \glsenableentrycount % aktiviert \cgls, \cglspl, \cGls, \cGlspl, siehe https://tex.stackexchange.com/questions/98494/glossaries-dont-print-single-occurences/230664#230664
 
 % Abkürzungen, die im Abkürzungsverzeichnis auftauchen und automatisch durch das glossaries-Paket sortiert werden
-\newacronym[description={Container Loading Problem}]{CLP}{CLP}{Container Loading Problem}
-\newacronym[description={Vehicle Routing Problem}]{VRP}{VRP}{Vehicle Routing Problem}
-\newacronym[description={Capacitated Vehicle Routing Problem}]{CVRP}{CVRP}{Capacitated Vehicle Routing Problem}
-\newacronym[description={Bin Packing Problem}]{BPP}{BPP}{Bin Packing Problem}
-\newacronym[description={Knapsack Problem}]{KP}{KP}{Knapsack Problem}
-\newacronym[description={Last-In-First-Out}]{LIFO}{LIFO}{Last-In-First-Out}
-\newacronym[description={Cutting and Packing}]{CaP}{C\&P}{Cutting and Packing}
-\newacronym[description={Constraint Programming}]{CP}{CP}{Constraint Programming}
-\newacronym[description={Mixed-Integer Programming}]{MIP}{MIP}{Mixed-Integer Programming}
-\newacronym[description={Genetic Algorithm}]{GA}{GA}{Genetic Algorithm}
-\newacronym[description={Tabu Search}]{TS}{TS}{Tabu Search}
-\newacronym[description={Simulated Annealing}]{SA}{SA}{Simulated Annealing}
-\newacronym[description={Greedy Randomized Adaptive Search Procedure}]{GRASP}{GRASP}{Greedy Randomized Adaptive Search Procedure}
-\newacronym[description={Variable Neighborhood Search}]{VNS}{VNS}{Variable Neighborhood Search}
-\newacronym[description={Pallet Loading Problem}]{PLP}{PLP}{Pallet Loading Problem}
-\newacronym[description={Machine Learning}]{ML}{ML}{Machine Learning}
-\newacronym[description = {Artificial Neural Network}]{ANN}{ANN}{Artificial Neural Network}
-\newacronym[description = {Support Vector Machine}]{SVM}{SVM}{Support Vector Machine}
-\newacronym[description = {Logistic Regression}]{LR}{LR}{Logistic Regression}
-\newacronym[description = Two-dimensional Loading Capacitated Vehicle Routing Problem]{2L-CVRP}{2L--CVRP}{Two-dimensional Loading Capacitated Vehicle Routing Problem}
-\newacronym[description = Three-dimensional Loading Capacitated Vehicle Routing Problem]{3L-CVRP}{3L--CVRP}{Three-dimensional Loading Capacitated Vehicle Routing Problem}
-\newacronym[description = Three-Dimensional Loading Vehicle Routing Problem with Time Windows]{3L-VRPTW}{3L--VRPTW}{Three-Dimensional Loading Vehicle Routing Problem with Time Windows}
-\newacronym[description = Time Windows]{TW}{TW}{Time Windows}
-\newacronym[description = Lower Bound]{LB}{LB}{Lower Bound}
-\newacronym[description = Upper Bound]{UB}{UB}{Upper Bound}
-\newacronym[description = Manual LIFO]{MLIFO}{MLIFO}{Manual LIFO}
+\newacronym[description={Container loading problem}]{CLP}{CLP}{container loading problem}
+\newacronym[description={Vehicle routing problem}]{VRP}{VRP}{vehicle routing problem}
+\newacronym[description={Capacitated vehicle routing problem}]{CVRP}{CVRP}{capacitated vehicle routing problem}
+\newacronym[description={Bin packing problem}]{BPP}{BPP}{bin packing problem}
+\newacronym[description={Last-in-first-out}]{LIFO}{LIFO}{last-in-first-out}
+\newacronym[description={Cutting and packing}]{CaP}{C\&P}{cutting and packing}
+\newacronym[description={Constraint programming}]{CP}{CP}{constraint programming}
+\newacronym[description={Mixed-integer programming}]{MIP}{MIP}{mixed-integer programming}
+\newacronym[description={Genetic algorithm}]{GA}{GA}{genetic algorithm}
+\newacronym[description={Tabu search}]{TS}{TS}{tabu search}
+\newacronym[description={Simulated annealing}]{SA}{SA}{simulated annealing}
+\newacronym[description={Greedy randomized adaptive search procedure}]{GRASP}{GRASP}{greedy randomized adaptive search procedure}
+\newacronym[description={Variable neighborhood search}]{VNS}{VNS}{variable neighborhood search}
+\newacronym[description={Pallet loading problem}]{PLP}{PLP}{pallet loading problem}
+\newacronym[description={Machine learning}]{ML}{ML}{machine learning}
+\newacronym[description={Artificial neural network}]{ANN}{ANN}{artificial neural network}
+\newacronym[description={Support vector machine}]{SVM}{SVM}{support vector machine}
+\newacronym[description={Logistic regression}]{LR}{LR}{logistic regression}
+\newacronym[description={Two-dimensional loading capacitated vehicle routing problem}]{2L-CVRP}{2L--CVRP}{two-dimensional loading capacitated vehicle routing problem}
+\newacronym[description={Three-dimensional loading capacitated vehicle routing problem}]{3L-CVRP}{3L--CVRP}{three-dimensional loading capacitated vehicle routing problem}
+\newacronym[description={Three-dimensional loading vehicle routing problem with time windows}]{3L-VRPTW}{3L--VRPTW}{three-dimensional loading vehicle routing problem with time windows}
+\newacronym[description={Time windows}]{TW}{TW}{time windows}
+\newacronym[description={Lower bound}]{LB}{LB}{lower bound}
+\newacronym[description={Upper bound}]{UB}{UB}{upper bound}
+\newacronym[description={Manual LIFO}]{MLIFO}{MLIFO}{manual LIFO}
+\newacronym[description={Load-bearing strength}]{LBS}{LBS}{load-bearing strength}
+
 
 % Abkürzungen, die nicht im Abkürzungsverzeichnis aufgeführt werden
 %\newabbreviation{zB}{z.\,B.}{zum Beispiel}
@@ -39,6 +39,7 @@
 % Mit "F5" kompilieren oder "Tools -> Befehle -> makeglossaries" (F9) starten, um das Symbolverzeichnis zu aktualisieren
 % \newsymb{<sort by>}{<name>}{<symbol>}{<unit>}
 %
+\begin{comment}
 \newsymb{E}{Erwartungswert}{\mathbb{E}\left(\cdot\right)}{}
 \newsymb{P}{Wahrscheinlichkeitsmaß}{\mathbb{P}\left(\cdot\right)}{}
 \newsymb{V}{Varianz}{\mathbb{V}\left(\cdot\right)}{}
@@ -49,3 +50,4 @@
 %\newsymb{E}{Erwartungswert}{\ExpValue}{}
 %
 \glsaddall[types={symbols}] % Alle Symbole werden dem Symbolverzeichnis hinzugefügt
+\end{comment}

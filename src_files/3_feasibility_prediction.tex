@@ -4,17 +4,17 @@ This section explores how \gls{ML} algorithms can enhance \gls{CLP} solution str
 highlighting both benefits and limitations. Two papers will be
 analyzed, which use predictive methods to accelerate the computation time. Before that,
 a short introduction to classifiers will be conducted. It is important to note that
-several machine learning approaches feature
-online \gls{BPP}, where the best placement of single items, consecutively available,
-needs to be found, instead of finding one overall placement for all items at once\footcite[cf.][p. 1]{ali_-line_2022}.
-As this work focuses on offline \gls{BPP}, the online approaches are not further considered, and the focus is laying
-primarily on \gls{ML} classifiers. These are supervised \gls{ML} algorithms predicting the
+several machine learning approaches address the \textit{on-line} \gls{BPP}, where the optimal placement
+of individual items, arriving sequentially, must be determined.\footcite[cf.][p. 1]{ali_-line_2022}
+Since this work focuses on the \textit{off-line} \gls{BPP}, where a placement for all items is determined
+simultaneously, on-line approaches are not further considered. The emphasis is placed primarily
+on \gls{ML}-based classifiers. These are supervised \gls{ML} algorithms predicting the
 value of a categorical or binary output column, called label, based on the
 values of other columns, called features. Classifiers learn from a labeled dataset,
 where the correct output values are known in advance, and then use this knowledge to
 make predictions on new, unseen data. The accuracy can be evaluated afterwards by comparing
-the predicted labels with the actual labels \footcite[cf.][]{kotsiantis_supervised_2007}.
-An exemplary train dataset is shown in table \ref{tab:classifier_label_data}.
+the predicted labels with the actual labels. \footcite[cf.][]{kotsiantis_supervised_2007}
+An exemplary train dataset is shown in Table~\ref{tab:classifier_label_data}.
 
 \input{tables/label_classifier}
 
@@ -89,15 +89,15 @@ Moreover, results achieved by simple classifiers often lack practical relevance,
 scenarios, such as loading large containers or trucks, inevitably involve multiple constraints that
 must be taken into account. Therefore, the development of a classifier is not only demanding but also
 must be weighed carefully to ensure a favorable cost-benefit ratio.
-A particularly promising and practically relevant application is the prediction of the feasible tours for the
+A particularly promising and practically relevant application is the prediction of the feasibility of single tours for the
 \gls{3L-CVRP} with constraints, an extension of the \gls{2L-CVRP} example discussed earlier. In the
 \gls{3L-CVRP}, a large number of routes must be evaluated to identify those that minimize the total
 distance traveled by all vehicles. While the packing of requested items does not need to satisfy
-optimization criteria, it must still be feasible under the given \gls{CLP} constraints\footcite[cf.][]{tamke_branch-and-cut_2024}.
+optimization criteria, it must still be feasible under the given \gls{CLP} constraints.\footcite[cf.][]{tamke_branch-and-cut_2024}
 As discussed in Chapter~\ref{sec:classical_solution_approaches}, the verification of
 packing feasibility for each individual route is computationally expensive.
-Here, classifiers can significantly boost performance of existing exact algorithms by rapidly evaluating route feasibility. The
-exact packing solution is then computed only for the final solution candidates or before a potentially
-feasible solution is discarded to avoid incorrect eliminations, as presented above.
+Here, classifiers can significantly boost performance of existing exact algorithms by rapidly predicting the feasibility of the route. The
+exact packing solution is then only computed for the final solution candidates or before an infeasible classified solution
+is discarded to avoid incorrect eliminations, as presented above.
 To facilitate this approach, a comparison of various published \gls{3L-CVRP} datasets will be conducted
 to compare and identify the most appropriate dataset for training a binary feasibility classifier.
