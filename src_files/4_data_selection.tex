@@ -7,7 +7,7 @@ in this chapter. The goal is to identify a suitable dataset for training a gener
 the feasibility of the \gls{CLP} of single tours from different datasets. Therefore, the dataset needs
 heterogeneous characterists to represent numerous possible use-cases
 as shown in Chapter~\ref{sec:motivation_feasibility_prediction}. Five published \cgls{3L-CVRP} datasets are presented with respect to their overall characteristics.
-Each dataset gets an unique identfier to simplilfy the comparison and is shown in parenthesis
+Each dataset gets an unique identfier to simplify the comparison and is shown in parenthesis
 after the following individual introduction. The first \cgls{3L-CVRP} dataset was published by \citeauthor*{gendreau_tabu_2006} in
 \citeyear{gendreau_tabu_2006} and delivered the first \cgls{3L-CVRP} instances containing huge and heavy items (\gendreauDataSet).\footcite[cf.][]{gendreau_tabu_2006}
 The second dataset was published by \citeauthor*{moura_integrated_2009} in \citeyear{moura_integrated_2009},
@@ -23,7 +23,7 @@ The second one focuses on semi-trailer trucks and special requirements for axle 
 The characteristics of the datasets are summarized in the following Table~\ref{tab:dataset_comparison},
 where the brackets [\,] indicate a range of possible values and the braces $\{\,\}$ symbolizes tuples of geometric dimensions.
 Here, \textit{relative} relates to the ratio of item properties to the vehicle capacity or dimensions,
-and a \textit{item type} is defined by its geometrical dimensions, the weight, and possible stability characteristics, such as fragility.
+and a \textit{item type} is defined by its geometrical dimensions, the weight, and possible stability characteristics, such as fragility or \gls{LBS}.
 When the number of item types is smaller than the number of items, items with equal type occur multiple times.
 
 \input{tables/instance_comparison.tex}
@@ -48,9 +48,9 @@ more advanced constraints such as robust stability, reachability, and \gls{LBS},
 basic ones like support area, \gls{LIFO}, and fragility. To further investigate the differences
 between the datasets, Figure~\ref{fig:dataset_comparison} visualizes the relative mass and
 volume of all items requested by individual customers. This representation reflects the
-unconstrained \gls{LB} on vehicle usage. Additionally, the size of each scatter point indicates
-the total number of items requested. For example, the \mouraDataSetText dataset includes 46 instances with 25
-customers each, resulting in $25 \cdot 46 = 1150$ dots in the plot.
+unconstrained lower bound on vehicle usage. For example, the \mouraDataSetText dataset includes 46
+instances with 25 customers each, resulting in $25 \cdot 46 = 1150$ dots in the plot.
+Additionally, the size of each scatter point indicates the total number of items requested.
 
 \begin{figure}[ht]
     \centering
@@ -73,7 +73,7 @@ the relative mass and volume of all items requested by individual customers for 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.85\textwidth]{pictures/krebs_instances_detailed.png}
-    \caption[Visualization of different instances of \textcite{krebs_advanced_2021} dataset.]{Visualization of different instances of \krebsADataSetText dataset.\\
+    \caption[Visualization of different instances of \textcite{krebs_advanced_2021} dataset.]{Visualization of different instances of \krebsADataSetText dataset.
         The instances are named by the number of customers, item types and items.}
     \label{fig:krebs_dataset_analysis_detailes}
 \end{figure}
@@ -81,7 +81,7 @@ the relative mass and volume of all items requested by individual customers for 
 Several insights can be obtained from the analysis of this plot. Firstly, the aggregated relative
 volume and mass per customer is significantly lower than for the instances with 60 or 100 customers. Secondly,
 the distribution differs from each instance type, ranging from quite linear distributions in a narrow
-interval to quite broad distributions.  These two observations need to be considered, when selecting
+interval (e.g. instance 60-100-400) to quite broad distributions (e.g. instance 100-100-400). These two observations need to be considered, when selecting
 instances to generate training data for the classifier to avoid a homogenous training set, and
 as a consequence poor classifying results with a low accuracy.
 

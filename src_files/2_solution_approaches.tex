@@ -5,9 +5,9 @@ Consequently, heuristics and metaheuristics were the dominating tools
 in the early stages of this research field.\footcite[cf.][]{pisinger_heuristics_2002} The variety of methods
 and their solution quality for solving the 2D \gls{CLP} developed in recent years. \footcite[cf.][p. 23]{iori_exact_2021}
 The variety of 3D algorithms, especially for exact methods, is in comparison limited, as
-\citeauthor*{zhao_comparative_2016} elaborated in their survey. \footcite[cf.][]{zhao_comparative_2016}
-The following Figure~\ref{fig:solution_methods_overview} presents an overview of the solution methods
-presented in the comparative review about 3D \gls{CLP}, divided in three categories constructive heuristics, metaheuristics
+\citeauthor*{zhao_comparative_2016} elaborated in their survey and the following Figure~\ref{fig:solution_methods_overview}
+presents an overview of the solution methods for the 3D \gls{CLP}. \footcite[cf.][]{zhao_comparative_2016}
+It is divided in three categories constructive heuristics, metaheuristics
 and exact methods. Hybrid methods and improvement heuristics are not explicitly shown in the figure,
 as the former combines components from multiple categories, while the latter is subsumed within
 metaheuristics. The depicted solution methods are described in the following.
@@ -24,14 +24,14 @@ simplifying the remaining problem space. Moreover, when the layers or walls have
 equal dimensions approximately, horizontal and vertical stability constraints are met.
 Beyond these two dominant approaches, several adaptations exist to address item heterogeneity.
 For example, \citeauthor*{gehring_genetic_1997} propose the construction of item
-\textit{towers}, in which boxes are stacked on top of other items so that the base of the box is covered completly
+\textit{towers}, in which boxes are stacked on top of other items so that the base of the box is covered completely
 by the box below it.
 This effectively reduces the dimensions from 3D to a 2D floor space arrangement,
 similar to the \gls{PLP}. \footcite[cf.][pp. 402--406]{gehring_genetic_1997}
 Another method involves forming \textit{blocks} composed of identically shaped items.
 These blocks are treated as single entities
 during packing, significantly reducing the number of elements to be handled and thus
-lowering overall problem complexity. Even though constructive heuristics are quite simple,
+lowering overall problem complexity.\footcite[cf.][p. 801]{liu_novel_2011} Even though constructive heuristics are quite simple,
 they are still widely used because of their simplicity and efficiency to obtain fast solutions.
 \footcite[cf.][pp. 11--13]{tamke_branch-and-cut_2024}
 
@@ -60,7 +60,7 @@ Two prominent methods exist for modeling the \gls{CLP}. The first one is \gls{MI
 formulated in two primary ways. One approach defines each possible packing pattern as
 a variable. \footcite[cf.][pp. 29--30]{zhu_prototype_2012} The second approach models
 the placement of items using discrete coordinate variables. \footcite[cf.][pp. 4--8]{moura_integrated_2009}
-Both formulations can benefit from enhancements such as Branch\&Price or Branch\&Cut
+Both formulations can benefit from enhancements such as branch-and-price or branch-and-cut
 methods, which reduce the search space and improve solution time.
 The second main method is \gls{CP}, which offers a flexible alternative for handling
 complex constraints, where the focus is to find feasible solutions primarily and
