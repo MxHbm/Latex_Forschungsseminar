@@ -17,12 +17,21 @@ defined as a recangular volume with a fixed size and shape, where the items have
 Other, non rectangular, shapes are seldomly considered in the literature, as the practical relevance is
 limited. Multiple containers of homogeneous or heterogeneous sizes are used when the volume and weight
 of the cargo require it.\footcite[cf.][pp. 1--2]{bortfeldt_constraints_2013}
-According to \citeauthor*{bischoff_issues_1995}, the mere placement of items in containers is insufficient
+According to \textcite{bischoff_issues_1995}, the mere placement of items in containers is insufficient
 if practical requirements are not fulfilled as it lacks applicability. \footcite[cf.][pp. 1--2]{bischoff_issues_1995}
-\citeauthor*{bortfeldt_constraints_2013} systematically categorized all constraints emphasized in \gls{CLP} research
+\textcite{bortfeldt_constraints_2013} systematically categorized all constraints emphasized in \gls{CLP} research
 into five categories, which are presented in the following. They also distinguish between hard and soft constraints,
 where hard constraints must be strictly satisfied, while soft constraints may be violated
-to some extent.\footcite[cf.][p. 2]{bortfeldt_constraints_2013}
+to some extent.\footcite[cf.][p. 2]{bortfeldt_constraints_2013}  Figure~\ref{fig:solution-visualization}
+visualizes a possible 3D packing with different constraints applied.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=6.3cm]{pictures/3l_cvrp_example.png}
+    \caption[Visualized 3D packing with packing constraints.]{3D Packing with geometry, orthogonality and support area constraints.\footnotemark}.
+    \footnotetext{CLP Visualizer from \textcite{tamke_branch-and-cut_2024}.}
+    \label{fig:solution-visualization}
+\end{figure}
 
 \subsubsection{Container related constraints}
 These constraints summarize all physical barriers of the container. The \textit{load capacity} limits the aggregated
@@ -40,7 +49,7 @@ item candidates. The \textit{orientation} constraint restricts how an item can b
 There are several types of rotation, each defined by the axis around which the item rotates.
 The most common is the \textit{z-rotation}, where rotation is only allowed around the vertical axis.
 When 3D packing is considered, stacking of items is allowed in comparison to 2D packing, when all
-items are placed on the container floor. Two stacking approaches exist.
+items are placed on the container floor. Two main approaches exist, when stacking is considered.
 The \textit{fragility} constraint differentiates between fragile and non-fragile items,
 allowing only non-fragile items to be stacked on non-fragile items. Figure \ref{fig:stacking_comparison} showcases
 this definition. The other approach defines an individual \textit{\gls{LBS}} for each
@@ -54,10 +63,10 @@ the entire cargo or to specific subsets of it. The \textit{complete-shipment} co
 requires that all items within a shipment must either be loaded into the same
 container or be left behind entirely. This constraint is important
 when container capacity is limited (output maximization) and items
-cannot be split. The allocation constraint serves a similar purpose,
-including the connectivity constraint, which mandates that
+cannot be split. The \textit{allocation} constraint serves a similar purpose,
+including the \textit{connectivity} constraint, which mandates that
 certain items must be loaded into the same container, and the
-separation constraint, which requires specific items to
+\textit{separation} constraint, which requires specific items to
 be distributed across different containers. For example, kitchen
 shipments, comprising multiple packages, should be delivered together
 to enable efficient installation. Conversely, items such as perfume and fresh
@@ -79,16 +88,7 @@ destined for different delivery locations. The goal is to minimize reloading eff
 by destination, arranging these groups in the delivery sequence, and applying either a \textit{\gls{LIFO}}
 or sequential loading policy to ensure efficient unloading without having to move unrelated items.
 Variations of the \gls{LIFO} constraint account for manual unloading (\textit{\gls{MLIFO}}) or unloading based on the
-maximum allowable distance reachable from the unloading point (\textit{reachability}). Figure~\ref{fig:solution-visualization}
-visualizes a possible 3D packing with different constraints applied.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=6.3cm]{pictures/3l_cvrp_example.png}
-    \caption[Visualized 3D packing with packing constraints.]{3D Packing with geometry, orthogonality and support area constraints.\footnotemark}.
-    \footnotetext{CLP Visualizer from \cite{tamke_branch-and-cut_2024}}
-    \label{fig:solution-visualization}
-\end{figure}
+maximum allowable distance reachable from the unloading point (\textit{reachability}).
 
 \subsubsection{Load-related constraints}
 

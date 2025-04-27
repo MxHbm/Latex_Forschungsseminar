@@ -11,14 +11,17 @@
             % Draw the three items inside
             % Draw the five items and their labels
             \draw[fill=blue!20] (3.5,0) rectangle (5,0.5);
+            \draw[thick,dashed,black] (4.25,0) -- (4.25,0.25);  % <---
             \draw[fill = black!90, draw = blue!20] (4.25,0.25) circle (0.1);
             \node[anchor=west] at (4.25,0.25) {$G_E$};
 
             \draw[fill=blue!20] (3,0.5) rectangle (5,1);
+            \draw[thick,dashed,black] (4,0) -- (4,0.75);  % <---
             \draw[fill = black!90, draw = blue!20] (4,0.75) circle (0.1);
             \node[anchor=west] at (4,0.75) {$G_D$};
 
             \draw[fill=blue!20] (2.33,1) rectangle (5,1.5);
+            \draw[thick,dashed,black] (3.67,0) -- (3.67,1.25);  % <---
             \draw[fill = black!90, draw = blue!20] (3.67,1.25) circle (0.1);
             \node[anchor=west] at (3.67,1.25) {$G_C$};
 
@@ -49,22 +52,27 @@
             % Draw the three items inside
             % Draw the five items and their labels
             \draw[fill=green!20] (3.5,0) rectangle (5,0.5);
+            \draw[thick,dashed,black] (4.25,0) -- (4.25,0.25);  % <---
             \draw[fill = black!90, draw = green!20] (4.25,0.25) circle (0.1);
             \node[anchor=west] at (4.25,0.25) {$G_E$};
 
             \draw[fill=green!20] (3,0.5) rectangle (5,1);
+            \draw[thick,dashed,black] (4,0) -- (4,0.75);  % <---
             \draw[fill = black!90, draw = green!20] (4,0.75) circle (0.1);
             \node[anchor=west] at (4,0.75) {$G_D$};
 
             \draw[fill=green!20] (2.33,1) rectangle (5,1.5);
+            \draw[thick,dashed,black] (3.67,0) -- (3.67,1.25);  % <---
             \draw[fill = black!90, draw = green!20] (3.67,1.25) circle (0.1);
             \node[anchor=west] at (3.67,1.25) {$G_C$};
 
             \draw[fill=green!20] (2.33,1.5) rectangle (5,2);
+            \draw[thick,dashed,black] (3.67,1.25) -- (3.67,1.75);  % <---
             \draw[fill = black!90, draw = green!20] (3.67,1.75) circle (0.1);
             \node[anchor=west] at (3.67,1.75) {$G_B$};
 
             \draw[fill=green!20] (2.33,2) rectangle (5,2.5);
+            \draw[thick,dashed,black] (3.67,1.75) -- (3.67,2.25);  % <---
             \draw[fill = black!90, draw = green!20] (3.67,2.25) circle (0.1);
             \node[anchor=west] at (3.67,2.25) {$G_A$};
 
@@ -76,6 +84,6 @@
         \caption{Feasible and robust stacking regarding 75\% support area.}
     \end{subfigure}
     \caption[Comparison of different vertical stability constraints.]{Comparison of different vertical stability constraints \\ with G = Center of Gravity (side view). \footnotemark}
-    \footnotetext{Own figures based on \cite[p. 845]{krebs_advanced_2021}.}
+    \footnotetext{Own figures based on \textcite[p. 845]{krebs_advanced_2021}.}
     \label{fig:vertical_stability_comparison}
 \end{figure}

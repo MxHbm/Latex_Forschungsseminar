@@ -7,7 +7,7 @@ can be retrieved in satisfactory time. Exact solutions help to understand the st
 and to evalutate and enhance existing heuristics. To accelerate exact methods different \gls{ML} enhancements
 were presented and the \gls{3L-CVRP} was identified as a promising future use case for \gls{ML} classifiers.
 The importance of realistic constraints of the \gls{CLP} were higlighted and the challenges faced when
-training the classifier with such constraints were discussed. A dataset from \citeauthor*{krebs_advanced_2021} was identified
+training the classifier with such constraints were discussed. A dataset from \textcite{krebs_advanced_2021} was identified
 was selected for future training of a classifier. To train a \gls{3L-CVRP} classifier that incorporates practical constraints, several next steps are
 required. First, a training dataset must be created, consisting of individual tours that are pre-labeled
 as feasible or infeasible using an exact \gls{CP} approach. In subsequent training iterations and epochs,
@@ -29,7 +29,7 @@ needs to be carefully selected including features, which can display the complex
 and representative data points, which are used also in the algorihtm the classifier is integrated into.
 The \gls{3L-CVRP} has been identified as a promising candidate for the application of \gls{ML} classifiers,
 as many tours need to be checked for packing feasibility and realistic constraints are needed to consider
-practical logistical scenarios. The dataset from \citeauthor*{krebs_advanced_2021} was
+practical logistical scenarios. The dataset from \textcite{krebs_advanced_2021} was
 identified as a suitable foundation for future work training a classifier.
 The next steps involve creating a labeled training dataset by creating \gls{VRP} tours, which are retrieved
 by solving the \gls{3L-CVRP} with an exact algorithm such as Branch\&Cut and storing the created tours.
@@ -58,7 +58,7 @@ it involves evaluating many tours for packing feasibility while accounting for r
 constraints. The dataset from \krebsADataSetText has been identified as a suitable foundation
 for future classifier training. The next steps involve generating a labeled training dataset by solving
 instances of the \gls{3L-CVRP} using an exact algorithm such as branch-and-cut with underlying column generation and storing the resulting tours.
-These tours, with represent a \gls{CLP} instance with constraints, will then be classified as feasible or
+These tours, which represent a \gls{CLP} instance with constraints, will then be classified as feasible or
 infeasible using a \gls{CP} model. Feature selection will follow an iterative process aimed at effectively
 capturing the underlying \gls{CLP} constraints. Various \gls{ML} models will be trained, and the model that
 provides the highest feasibility prediction accuracy will be selected. Once satisfactory accuracy is achieved,
@@ -67,4 +67,4 @@ to substitute the exact time-demanding feasibility checker.
 Subsequent experiments will assess the classifier’s impact on the algorithm’s performance. Finally, the complete
 algorithm will be tested on additional \gls{3L-CVRP} datasets presented in Chapter~\ref{sec:dataset_selection}
 to evaluate its generalizability. This process has the potential to yield meaningful benchmarks across
-multiple datasets and provide valuable insights into the effectiveness of classifier integration in exact algorithms.
+multiple datasets and provide valuable insights into the effectiveness of classifier integration in exact \gls{3L-CVRP} algorithms.

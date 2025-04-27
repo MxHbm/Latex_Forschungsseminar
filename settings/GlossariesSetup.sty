@@ -1,8 +1,8 @@
 % Can be used with the option "makeindex" or "automake" instead of "xindy". Here, again, a reference to the guideline of Falk Hanisch (https://github.com/tud-cd/tudscr/releases -> tudscr_v2.04d.zip -> .\doc\latex\tudscr\tutorials\treatise.pdf), p. 12 -- 22 and the CTAN documentaiton of glossaries.
 
-\setupglossaries{nogroupskip,nopostdot,nonumberlist,ucmark=false}
+%\setupglossaries{nogroupskip,nopostdot,nonumberlist,ucmark=false}
 % Falls keine lInks für abkpürzungen gewünscht sind, dann die Zeile auskommentieren
-%\setupglossaries{nogroupskip,nopostdot,nonumberlist,ucmark=false,nohypertypes={acronym,symbols}}
+\setupglossaries{nogroupskip,nopostdot,nonumberlist,ucmark=false,nohypertypes={acronym,symbols}}
 
 % Definition von Abkürzungen die nicht im Inhaltsverzeichnis erscheinen sollen
 \newignoredglossary{abbreviation}
@@ -28,7 +28,7 @@
 \newglossarystyle{bwlimsuper}{%
 	\renewenvironment{theglossary}%
 	{\tablehead{}\tabletail{}%
-		\begin{supertabular}{@{}lp{\glsdescwidth}p{\glspagelistwidth}@{}}}%
+		\begin{supertabular}{@{}lll@{}}}% lp{\glsdescwidth}p{\glspagelistwidth} -> vorherige einstellung
 			{\end{supertabular}}%
 	\renewcommand*{\glossaryheader}{}%
 	\renewcommand*{\glsgroupheading}[1]{}%

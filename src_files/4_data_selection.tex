@@ -8,15 +8,15 @@ the feasibility of the \gls{CLP} of single tours from different datasets. Theref
 heterogeneous characterists to represent numerous possible use-cases
 as shown in Chapter~\ref{sec:motivation_feasibility_prediction}. Five published \cgls{3L-CVRP} datasets are presented with respect to their overall characteristics.
 Each dataset gets an unique identfier to simplify the comparison and is shown in parenthesis
-after the following individual introduction. The first \cgls{3L-CVRP} dataset was published by \citeauthor*{gendreau_tabu_2006} in
+after the following individual introduction. The first \cgls{3L-CVRP} dataset was published by \citeauthor{gendreau_tabu_2006} in
 \citeyear{gendreau_tabu_2006} and delivered the first \cgls{3L-CVRP} instances containing huge and heavy items (\gendreauDataSet).\footcite[cf.][]{gendreau_tabu_2006}
-The second dataset was published by \citeauthor*{moura_integrated_2009} in \citeyear{moura_integrated_2009},
-and combines the \gls{VRP} from \citeauthor*{solomon_algorithms_1987} and the \gls{CLP} instances from
-\citeauthor*{bischoff_issues_1995} defining the \gls{3L-VRPTW} considering
+The second dataset was published by \citeauthor{moura_integrated_2009} in \citeyear{moura_integrated_2009},
+and combines the \gls{VRP} from \citeauthor{solomon_algorithms_1987} and the \gls{CLP} instances from
+\citeauthor{bischoff_issues_1995} defining the \gls{3L-VRPTW} considering
 many items of small size and weight (\mouraDataSet).\footcites[cf.][]{solomon_algorithms_1987,bischoff_issues_1995}[][]{moura_integrated_2009}
-The first dataset containing real-life data was published by \citeauthor*{ceschia_local_2013} in \citeyear{ceschia_local_2013}
+The first dataset containing real-life data was published by \citeauthor{ceschia_local_2013} in \citeyear{ceschia_local_2013}
 and contains the instances with the most items considered (\ceschiaDataSet).\footcite[cf.][]{ceschia_local_2013}
-\citeauthor*{krebs_advanced_2021} published two different datasets in
+Krebs published two different datasets in
 \citeyear{krebs_advanced_2021} with a focus on more realistic constraints. The first one contains a set
 of realistic constraints and offers a wide range of instance sizes (\krebsADataSet).\footcite[cf.][]{krebs_advanced_2021}
 The second one focuses on semi-trailer trucks and special requirements for axle weights (\krebsBDataSet).\footcite[cf.][]{krebs_axle_2021}
@@ -33,9 +33,9 @@ is how representative single tours from one dataset are for all other datasets. 
 should not contain outliers. The \gendreauDataSetText dataset has the most extreme values for the relative mass, minimum dimension of items,
 and the quantity of items per customers. The \mouraDataSetText dataset includes the highest number of lighweight items per customer,
 which can not represent the other datasets. \ceschiaDataSetText contains instances with the most items and the greatest range
-of item dimensions, but the relative mass per item is very low. The datasets from \citeauthor*{krebs_advanced_2021}
-reflect average characteristics overall. Between the two, the \krebsADataSetText shows the better performance,
-as the items in the \krebsBDataSetText have very low mass.
+of item dimensions, but the relative mass per item is very low. The datasets published by Krebs
+reflect average characteristics overall. Between the two datasets, \krebsADataSetText shows the better performance,
+as the items in \krebsBDataSetText have very low mass.
 The following Table~\ref{tab:constraint_matrix} provides an overview of the constraints considered
 in each dataset showcasing the realistic profile. The constraints are categorized in the five groups introduced
 in Chapter~\ref{sec:clp_definition}.
@@ -45,7 +45,7 @@ in Chapter~\ref{sec:clp_definition}.
 This comparison shows that all datasets include similar types of constraints, but the level
 of complexity varies. \krebsADataSetText and \ceschiaDataSetText stand out by incorporating
 more advanced constraints such as robust stability, reachability, and \gls{LBS}, in comparison to
-basic ones like support area, \gls{LIFO}, and fragility. To further investigate the differences
+basic ones like support area, \gls{LIFO} and fragility. To further investigate the differences
 between the datasets, Figure~\ref{fig:dataset_comparison} visualizes the relative mass and
 volume of all items requested by individual customers. This representation reflects the
 unconstrained lower bound on vehicle usage. For example, the \mouraDataSetText dataset includes 46
